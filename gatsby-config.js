@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Carlo Janea | Frontend Engineer`,
+    description: `Carlo Janea's portfolio (experience, skills, blog)`,
+    author: `@carlojanea`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -25,6 +25,22 @@ module.exports = {
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    "gatsby-plugin-emotion",
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: ["DM Sans:400,500,700"],
+        display: "swap",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-react-svg",
+      options: {
+        rule: {
+          include: /assets/,
+        },
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
