@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { Global, css } from "@emotion/core"
 
-const COLOR_SCHEME = {
+export const COLOR_SCHEME = {
   lightBlack: "#232528",
   darkBlack: "#101112",
   gray: "#534B62",
@@ -10,6 +10,8 @@ const COLOR_SCHEME = {
   browserClose: "#FF605C",
   browserMinimize: "#6A607D",
   browserMaximize: "#FFBD44",
+  tilde: "#01BAEF",
+  arrow: "#F3C969",
 }
 const Layout = ({ children }) => {
   return (

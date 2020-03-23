@@ -1,11 +1,13 @@
 import React from "react"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import Terminal from "../components/terminal"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
+
+    <Terminal></Terminal>
   </Layout>
 )
 
