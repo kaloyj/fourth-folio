@@ -51,6 +51,9 @@ const Layout = ({ children }) => {
             min-height: 100vh;
             width: 100vw;
             overflow-x: hidden;
+            display: flex;
+            flex-flow: row wrap;
+            align-content: flex-start;
           `}
         >
           {children}

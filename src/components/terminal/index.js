@@ -1,12 +1,27 @@
 import React from "react"
 import { css } from "@emotion/core"
 import { COLOR_SCHEME } from "../layout"
+import TerminalLines from "./TerminalLines"
 
+const terminalLines = [
+  {
+    content: "Carlo Janea's Portfolio",
+  },
+  {
+    content: "summary --show",
+  },
+  {
+    showMarker: false,
+    content: ["loves JS", "tries his best on UI/UX", "Paramore's #1 fan"],
+  },
+]
+
+const headerButtons = ["browserClose", "browserMinimize", "browserMaximize"]
 const Terminal = () => {
   return (
     <div
       css={css`
-        height: 50vh;
+        height: 47.5vh;
         width: 92%;
         margin: 0 4%;
 
@@ -14,7 +29,6 @@ const Terminal = () => {
         flex-flow: column wrap;
         border-radius: 5px;
         overflow: hidden;
-        margin-top: 10%;
         -webkit-box-shadow: -12px 10px 26px 3px rgba(16, 17, 18, 1),
           -2px 2px 2px -2px rgba(16, 17, 18, 1);
         -moz-box-shadow: -12px 10px 26px 3px rgba(16, 17, 18, 1),
@@ -25,16 +39,20 @@ const Terminal = () => {
     >
       <div
         css={css`
-          flex: 0 0 5%;
+          flex: 0 0 7.5%;
           background-color: ${COLOR_SCHEME.gray};
           display: flex;
           flex-flow: row wrap;
           align-items: center;
           padding-left: 10px;
           position: relative;
+
+          @media only screen and (min-width: 375px) {
+            flex: 0 0 6%;
+          }
         `}
       >
-        {["browserClose", "browserMinimize", "browserMaximize"].map(button => (
+        {headerButtons.map(button => (
           <div
             key={button}
             css={css`
@@ -63,9 +81,15 @@ const Terminal = () => {
         css={css`
           flex: 1;
           background-color: ${COLOR_SCHEME.darkBlack};
+          display: flex;
+          flex-flow: row wrap;
+          align-content: flex-start;
+          padding-top: 2%;
         `}
       >
-        hello
+        {terminalLines.map((text, index) => (
+          <TerminalLines text={text} key={index}></TerminalLines>
+        ))}
       </div>
     </div>
   )

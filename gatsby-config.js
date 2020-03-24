@@ -31,7 +31,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-fonts`,
       options: {
-        fonts: ["Poppins:300,400,700", "Source Code Pro:400,700"],
+        fonts: ["Poppins:200,400,700", "Source Code Pro:400,700"],
         display: "swap",
       },
     },
