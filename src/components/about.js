@@ -36,7 +36,10 @@ const About = () => {
         Hi! My name's Carlo Janea, a frontend engineer with the heart of
         creating maintainable things to help people. I mainly focus on the JS
         side of things especially React, but I do my best with UI/UX and
-        Accessibility. Super dedicated and committed, if I say so myself 😊
+        Accessibility. Super dedicated and committed, if I say so myself{" "}
+        <span role="img" aria-label="smiley face with blush">
+          😊
+        </span>
       </p>
     </div>
   )

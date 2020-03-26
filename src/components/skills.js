@@ -97,7 +97,9 @@ const Skills = () => {
             `}
           >
             {[...Array(level)].map((_, index) => (
-              <span key={index}>⚡️</span>
+              <span key={index} role="img" aria-label="lightning">
+                ⚡️
+              </span>
             ))}
           </div>
         </div>
