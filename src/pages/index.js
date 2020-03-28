@@ -6,6 +6,7 @@ import Hero from "../components/hero"
 import About from "../components/about"
 import Skills from "../components/skills"
 import Experience from "../components/experience"
+import Footer from "../components/footer"
 
 const IndexPage = () => {
   const { fluid: mainPhoto } = useMainPhoto()
@@ -16,6 +17,7 @@ const IndexPage = () => {
       <About></About>
       <Skills></Skills>
       <Experience></Experience>
+      <Footer></Footer>
     </Layout>
   )
 }

@@ -70,8 +70,10 @@ const ExperienceItem = ({
         </span>
         {listItems.map(item => (
           <div
+            key={item}
             css={css`
               margin-bottom: 0.5rem;
+              flex: 0 0 100%;
             `}
           >
             {item}
