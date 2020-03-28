@@ -33,6 +33,7 @@ const SVGContainerLink = styled("a")`
 const Footer = () => {
   return (
     <footer
+      id="contact"
       css={css`
         width: 100%;
         min-height: 72.5vh;

@@ -1,67 +1,13 @@
 import React, { Fragment } from "react"
-import Img from "gatsby-image"
 import { css } from "@emotion/core"
 import Terminal from "./terminal"
 import { COLOR_SCHEME } from "./layout"
+import Navbar from "./navbar"
 
-const Hero = ({ mainPhoto }) => {
+const Hero = ({ setAvoidScroll }) => {
   return (
     <Fragment>
-      <div
-        css={css`
-          flex: 0 0 92%;
-          margin: 1rem 4% 1rem;
-          display: flex;
-          flex-flow: row wrap;
-          justify-content: space-between;
-          align-items: center;
-        `}
-      >
-        <div
-          css={css`
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 2px solid ${COLOR_SCHEME.accent};
-
-            @media only screen and (min-width: 375px) {
-              width: 70px;
-              height: 70px;
-            }
-          `}
-        >
-          <Img fluid={mainPhoto}></Img>
-        </div>
-        <div
-          css={css`
-            height: 30px;
-            width: 30px;
-
-            @media only screen and (min-width: 375px) {
-              width: 36px;
-              height: 36px;
-            }
-          `}
-        >
-          <svg
-            width="100%"
-            height="100%"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M4 6H20M4 12H20M4 18H20"
-              stroke="white"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </div>
-      </div>
-
+      <Navbar setAvoidScroll={setAvoidScroll}></Navbar>
       <Terminal></Terminal>
       <div
         css={css`
@@ -69,7 +15,8 @@ const Hero = ({ mainPhoto }) => {
           display: flex;
           flex-flow: row wrap;
           justify-content: flex-end;
-          transform: translateY(-30%);
+          transform: translateY(-35%);
+          margin-bottom: -5%;
         `}
       >
         <h1

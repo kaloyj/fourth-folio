@@ -23,7 +23,7 @@ const Terminal = () => {
       css={css`
         height: 47.5vh;
         width: 92%;
-        margin: 0 4%;
+        margin: 2% 4% 0;
 
         display: flex;
         flex-flow: column wrap;

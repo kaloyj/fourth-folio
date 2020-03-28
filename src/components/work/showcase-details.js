@@ -30,7 +30,7 @@ const ShowcaseDetails = ({ selected }) => {
     >
       <div
         css={css`
-          min-height: 200px;
+          height: 200px;
           flex: 0 0 100%;
           background-color: ${COLOR_SCHEME.darkBlack};
           display: flex;

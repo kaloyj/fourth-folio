@@ -1,6 +1,8 @@
-import React from "react"
+import React, { Fragment } from "react"
 import { css } from "@emotion/core"
 import ExperienceItem from "./experience-item"
+import { SectionHeaders } from "../../pages"
+
 const EXPERIENCES = [
   {
     yearStart: "2011",
@@ -45,35 +47,46 @@ const EXPERIENCES = [
 ].reverse()
 const Experience = () => {
   return (
-    <div
-      css={css`
-        width: 100%;
-        min-height: 50vh;
-        display: flex;
-        flex-flow: row wrap;
-        align-content: start;
-        position: relative;
-        margin-bottom: 2rem;
-      `}
-    >
+    <Fragment>
+      <SectionHeaders
+        id="experience"
+        css={css`
+          margin-top: 3rem;
+          margin-bottom: 1rem;
+        `}
+      >
+        Experience
+      </SectionHeaders>{" "}
       <div
         css={css`
-          height: 100%;
-          border: 1px solid white;
-          width: 0;
-          position: absolute;
-          top: 0;
-          left: 40%;
+          width: 100%;
+          min-height: 50vh;
+          display: flex;
+          flex-flow: row wrap;
+          align-content: start;
+          position: relative;
+          margin-bottom: 2rem;
         `}
-      ></div>
+      >
+        <div
+          css={css`
+            height: 100%;
+            border: 1px solid white;
+            width: 0;
+            position: absolute;
+            top: 0;
+            left: 40%;
+          `}
+        ></div>
 
-      {EXPERIENCES.map(experience => (
-        <ExperienceItem
-          key={experience.title}
-          experience={experience}
-        ></ExperienceItem>
-      ))}
-    </div>
+        {EXPERIENCES.map(experience => (
+          <ExperienceItem
+            key={experience.title}
+            experience={experience}
+          ></ExperienceItem>
+        ))}
+      </div>
+    </Fragment>
   )
 }
 
