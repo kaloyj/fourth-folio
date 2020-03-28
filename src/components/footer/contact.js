@@ -22,6 +22,9 @@ const FormInput = styled("input")`
 const Contact = () => {
   return (
     <form
+      method="post"
+      netlify-honeypot="bot-field"
+      data-netlify="true"
       css={css`
         width: 80%;
         background-color: ${COLOR_SCHEME.lightBlack};
@@ -54,18 +57,20 @@ const Contact = () => {
       >
         Reach out via email.
       </legend>
+      <input type="hidden" name="bot-field" />
       <FormLabel>
         Email
-        <FormInput></FormInput>
+        <FormInput name="email"></FormInput>
       </FormLabel>
       <FormLabel>
         Subject
-        <FormInput></FormInput>
+        <FormInput name="subject"></FormInput>
       </FormLabel>
 
       <FormLabel>
         Message
         <textarea
+          name="message"
           css={css`
             flex: 0 0 100%;
             margin-top: 0.4rem;
