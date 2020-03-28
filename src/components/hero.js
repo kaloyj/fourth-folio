@@ -148,7 +148,7 @@ const Hero = ({ mainPhoto }) => {
               width: 100%;
               color: white;
               text-align: center;
-              font-size: 0.6rem;
+              font-size: 0.7rem;
               font-weight: 400;
               margin-top: 0.4rem;
               letter-spacing: 0.125rem;

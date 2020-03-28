@@ -27,8 +27,8 @@ const Layout = ({ children }) => {
           html,
           body {
             margin: 0;
-            font-family: "Poppins", -apple-system, BlinkMacSystemFont, Roboto,
-              Helvetica, Arial, sans-serif;
+            font-family: "Source Code Pro", -apple-system, BlinkMacSystemFont,
+              Roboto, Helvetica, Arial, sans-serif;
             font-size: 18px;
             line-height: 1.4;
             background-color: ${COLOR_SCHEME.lightBlack};
@@ -42,6 +42,7 @@ const Layout = ({ children }) => {
           h6 {
             line-height: 1.1;
             color: white;
+            font-family: "Poppins";
           }
         `}
       ></Global>

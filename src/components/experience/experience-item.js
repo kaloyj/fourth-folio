@@ -11,7 +11,6 @@ const ExperienceItem = ({
         flex: 0 0 92%;
         margin: 1rem 4%;
         color: white;
-        font-family: Source Code Pro;
         font-size: 0.75rem;
         display: flex;
         flex-flow: row wrap;
@@ -57,6 +56,7 @@ const ExperienceItem = ({
         <h4
           css={css`
             color: ${COLOR_SCHEME.accent};
+            font-family: Source Code Pro;
           `}
         >
           {listTitle}

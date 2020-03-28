@@ -33,7 +33,6 @@ const Contact = () => {
         transform: translate(-50%);
         padding: 6%;
         color: white;
-        font-family: Source Code Pro;
 
         -webkit-box-shadow: -12px 10px 26px 3px rgba(23, 25, 28, 1),
           -2px 2px 2px -2px rgba(23, 25, 28, 1);
@@ -41,6 +40,10 @@ const Contact = () => {
           -2px 2px 2px -2px rgba(23, 25, 28, 1);
         box-shadow: -12px 10px 26px -5px rgba(16, 17, 18, 1),
           -2px 2px 2px -2px rgba(16, 17, 18, 1);
+
+        @media only screen and (min-width: 360px) {
+          top: -40%;
+        }
       `}
     >
       <legend

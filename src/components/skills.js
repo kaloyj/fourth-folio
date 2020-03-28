@@ -75,7 +75,6 @@ const Skills = () => {
               text-align: right;
               font-size: 0.75rem;
               color: white;
-              font-family: Source Code Pro;
 
               @media only screen and (min-width: 375px) {
                 flex: 0 0 40%;

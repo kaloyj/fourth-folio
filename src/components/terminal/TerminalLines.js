@@ -8,7 +8,6 @@ const TerminalLines = ({ text }) => {
     <div
       css={css`
         color: white;
-        font-family: Source Code Pro;
         font-weight: 400;
         font-size: 0.7rem;
         display: flex;

@@ -55,6 +55,10 @@ const Footer = () => {
           justify-content: center;
           color: white;
           padding-bottom: 1rem;
+
+          @media only screen and (min-width: 375px) {
+            padding-bottom: 3.75rem;
+          }
         `}
       >
         <h4

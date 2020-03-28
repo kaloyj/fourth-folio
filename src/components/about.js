@@ -30,7 +30,6 @@ const About = () => {
           font-weight: 300;
           font-size: 1rem;
           line-height: 1.5rem;
-          font-family: Source Code Pro;
         `}
       >
         Hi! My name's Carlo Janea, a frontend engineer with the heart of
