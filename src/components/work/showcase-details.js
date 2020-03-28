@@ -4,9 +4,12 @@ import Placeholder from "./assets/photo-placeholder.svg"
 import Img from "gatsby-image/withIEPolyfill"
 
 import { COLOR_SCHEME } from "../layout"
+import useShowcasePhotos from "../../hooks/useShowcasePhotos"
 
-const ShowcaseDetails = ({ selected, photo }) => {
-  const { tech, title, description } = selected
+const ShowcaseDetails = ({ selected }) => {
+  const showcasePhotos = useShowcasePhotos()
+  const { tech, title, description, imageRef } = selected
+  const photo = imageRef ? showcasePhotos[imageRef] : ""
   return (
     <div
       css={css`

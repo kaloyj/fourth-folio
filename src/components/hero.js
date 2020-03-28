@@ -97,6 +97,7 @@ const Hero = ({ mainPhoto }) => {
             text-align: right;
             font-weight: 200;
             margin-top: 0.5rem;
+            font-family: Source Code Pro;
 
             @media only screen and (min-width: 375px) {
               font-size: 1.125rem;

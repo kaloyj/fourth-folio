@@ -1,6 +1,5 @@
-import React, { Fragment } from "react"
+import React, { Fragment, useState } from "react"
 import { css } from "@emotion/core"
-import useShowcasePhotos from "../../hooks/useShowcasePhotos"
 import ShowcasePreview from "./showcase-preview"
 import ShowcaseDetails from "./showcase-details"
 
@@ -48,9 +47,8 @@ const PAST_WORKS = [
 ]
 
 const Showcase = () => {
-  const showcasePhotos = useShowcasePhotos()
+  const [selectedWork, setSelectedWork] = useState(PAST_WORKS[0])
 
-  console.log({ showcasePhotos })
   return (
     <Fragment>
       <div
@@ -65,15 +63,13 @@ const Showcase = () => {
           <ShowcasePreview
             key={work.title}
             item={work}
-            photo={work.imageRef ? showcasePhotos[work.imageRef] : ""}
+            onClick={() => setSelectedWork(work)}
+            isActive={selectedWork.title === work.title}
           ></ShowcasePreview>
         ))}
       </div>
 
-      <ShowcaseDetails
-        selected={PAST_WORKS[0]}
-        photo={showcasePhotos["recordion"]}
-      ></ShowcaseDetails>
+      <ShowcaseDetails selected={selectedWork}></ShowcaseDetails>
     </Fragment>
   )
 }
