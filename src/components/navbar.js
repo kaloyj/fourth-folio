@@ -60,6 +60,8 @@ const Navbar = ({ setAvoidScroll }) => {
               right: 5%;
               font-size: 1.5rem;
               font-weight: 200;
+              border: none;
+              background: transparent;
             `}
           >
             x

@@ -26,6 +26,11 @@ const Hero = ({ setAvoidScroll }) => {
           flex: 0 0 100%;
           display: flex;
           flex-flow: row wrap;
+
+          @media only screen and (min-width: 1200px) {
+            flex: 0 0 80%;
+            margin-left: 10%;
+          }
         `}
       >
         <Terminal></Terminal>
@@ -67,6 +72,10 @@ const Hero = ({ setAvoidScroll }) => {
                 margin-right: 0;
                 margin-left: 4%;
               }
+
+              @media only screen and (min-width: 1024px) {
+                flex: 0 0 64%;
+              }
             `}
           >
             Carlo Janea
@@ -88,7 +97,7 @@ const Hero = ({ setAvoidScroll }) => {
               @media only screen and (min-width: 768px) {
                 flex: 0 0 64%;
                 text-align: left;
-                margin: 0.5rem 0 1rem 5%;
+                margin: 0.5rem 0 1rem 4.5%;
                 font-size: 1.5rem;
               }
             `}
@@ -117,6 +126,13 @@ const Hero = ({ setAvoidScroll }) => {
             margin-bottom: 8%;
             order: 3;
           }
+
+          @media only screen and (min-width: 1200px) {
+            flex: 0 0 80%;
+            margin-left: 10%;
+            margin-top: 2rem;
+            margin-bottom: 2%;
+          }
         `}
       >
         <div
@@ -125,6 +141,17 @@ const Hero = ({ setAvoidScroll }) => {
             flex-flow: row wrap;
             flex: 0 0 5%;
             justify-content: center;
+
+            @media only screen and (min-width: 1024px) {
+              svg {
+                height: 64px;
+                width: 64px;
+              }
+            }
+
+            @media only screen and (min-width: 1200px) {
+              margin-left: 4%;
+            }
           `}
         >
           <svg
@@ -152,6 +179,10 @@ const Hero = ({ setAvoidScroll }) => {
               margin-top: 0.4rem;
               letter-spacing: 0.125rem;
               text-transform: uppercase;
+
+              @media only screen and (min-width: 1024px) {
+                font-size: 1rem;
+              }
             `}
           >
             more

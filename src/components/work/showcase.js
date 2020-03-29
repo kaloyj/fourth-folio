@@ -69,6 +69,13 @@ const Showcase = () => {
             flex: 0 0 20%;
             flex-flow: column wrap;
           }
+
+          @media only screen and (min-width: 1200px) {
+            flex-flow: row wrap;
+            flex: 0 0 22%;
+            align-content: flex-start;
+            justify-content: space-between;
+          }
         `}
       >
         {PAST_WORKS.map(work => (

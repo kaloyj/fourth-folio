@@ -8,6 +8,14 @@ const FormLabel = styled("label")`
   display: flex;
   flex-flow: row wrap;
   margin-bottom: 1.25rem;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 1rem;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    font-size: 0.85rem;
+  }
 `
 const FormInput = styled("input")`
   flex: 0 0 100%;
@@ -18,6 +26,14 @@ const FormInput = styled("input")`
   color: white;
   font-family: Source Code Pro;
   font-size: 0.8rem;
+
+  @media only screen and (min-width: 768px) {
+    font-size: 1rem;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    font-size: 0.85rem;
+  }
 `
 const Contact = () => {
   return (
@@ -55,12 +71,28 @@ const Contact = () => {
           transform: translate(-50%, -20%);
           width: 60%;
         }
+
+        @media only screen and (min-width: 1200px) {
+          width: 30%;
+          left: 72%;
+          transform: translate(-50%, -50%);
+          min-height: 40vh;
+          padding: 3%;
+        }
       `}
     >
       <legend
         css={css`
           font-weight: 700;
           margin-bottom: 1.5rem;
+
+          @media only screen and (min-width: 768px) {
+            font-size: 1.75rem;
+          }
+
+          @media only screen and (min-width: 1024px) {
+            font-size: 1.25rem;
+          }
         `}
       >
         Reach out via email.
@@ -89,6 +121,14 @@ const Contact = () => {
             font-family: Source Code Pro;
             font-size: 0.8rem;
             height: 20vh;
+
+            @media only screen and (min-width: 768px) {
+              font-size: 1rem;
+            }
+
+            @media only screen and (min-width: 1200px) {
+              font-size: 0.85rem;
+            }
           `}
         ></textarea>
       </FormLabel>
@@ -102,6 +142,14 @@ const Contact = () => {
           padding: 5%;
           color: white;
           background-color: ${COLOR_SCHEME.darkBlack};
+
+          @media only screen and (min-width: 768px) {
+            font-size: 1.15rem;
+          }
+
+          @media only screen and (min-width: 1200px) {
+            font-size: 0.9rem;
+          }
         `}
       >
         Send

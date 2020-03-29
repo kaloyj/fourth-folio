@@ -35,7 +35,8 @@ const ExperienceItem = ({
           background-color: ${COLOR_SCHEME.lightBlack};
           top: 0;
           left: 40%;
-          transform: translate(-55%, -15%);
+          z-index: 2;
+          transform: translate(-50%, -15%);
 
           @media only screen and (min-width: 375px) {
             height: 35px;
@@ -45,8 +46,19 @@ const ExperienceItem = ({
           @media only screen and (min-width: 768px) {
             height: 40px;
             width: 40px;
-            transform: translate(-62.5%, -15%);
           }
+        `}
+      ></div>
+
+      <div
+        css={css`
+          position: absolute;
+          height: 120%;
+          width: 0;
+          border: 1px solid white;
+          z-index: 1;
+          left: 40%;
+          transform: translateX(-50%);
         `}
       ></div>
 

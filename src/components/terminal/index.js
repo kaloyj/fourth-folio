@@ -24,7 +24,6 @@ const Terminal = () => {
         height: 42.5vh;
         flex: 0 0 92%;
         margin: 2% 4% 0;
-
         display: flex;
         flex-flow: column wrap;
         border-radius: 5px;
@@ -44,6 +43,18 @@ const Terminal = () => {
           top: -40%;
           right: 0;
           order: 2;
+        }
+
+        @media only screen and (min-width: 1024px) {
+          height: 30vh;
+          top: 0;
+          transform: translateY(-50%);
+        }
+
+        @media only screen and (min-width: 1200px) {
+          height: 40vh;
+          width: 44%;
+          top: 50%;
         }
       `}
     >

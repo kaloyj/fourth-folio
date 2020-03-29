@@ -67,11 +67,11 @@ const Footer = () => {
           padding-bottom: 1rem;
 
           @media only screen and (min-width: 375px) {
-            padding-bottom: 3.75rem;
+            padding-bottom: 1rem;
           }
 
           @media only screen and (min-width: 1024px) {
-            padding-bottom: 5rem;
+            padding-bottom: 4rem;
           }
         `}
       >
@@ -92,6 +92,11 @@ const Footer = () => {
               text-align: right;
               flex: 0 0 92%;
               margin-right: 4%;
+            }
+
+            @media only screen and (min-width: 1200px) {
+              flex: 0 0 72%;
+              margin: 0 14%;
             }
           `}
         >
@@ -116,6 +121,11 @@ const Footer = () => {
               a:last-of-type {
                 margin-right: 0;
               }
+            }
+
+            @media only screen and (min-width: 1200px) {
+              flex: 0 0 72%;
+              margin: 1% 14%;
             }
           `}
         >

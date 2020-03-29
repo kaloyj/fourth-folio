@@ -1,5 +1,6 @@
 import React, { Fragment } from "react"
 import styled from "@emotion/styled"
+import { css } from "@emotion/core"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Hero from "../components/hero"
@@ -20,6 +21,10 @@ export const SectionHeaders = styled("h2")`
     margin-left: 4%;
     font-size: 2rem;
   }
+
+  @media only screen and (min-width: 1024px) {
+    font-size: 2.75rem;
+  }
 `
 
 const IndexPage = () => {
@@ -29,10 +34,24 @@ const IndexPage = () => {
         <Fragment>
           <SEO title="Home" />
           <Hero setAvoidScroll={setAvoidScroll}></Hero>
-          <About></About>
-          <Skills></Skills>
-          <Experience></Experience>
-          <Work></Work>
+          <div
+            css={css`
+              flex: 0 0 100%;
+              display: flex;
+              flex-flow: row wrap;
+
+              @media only screen and (min-width: 1200px) {
+                flex: 0 0 80%;
+                margin-left: 10%;
+              }
+            `}
+          >
+            <About></About>
+            <Skills></Skills>
+            <Experience></Experience>
+            <Work></Work>
+          </div>
+
           <Footer></Footer>
         </Fragment>
       )}

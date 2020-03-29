@@ -93,6 +93,10 @@ const Skills = () => {
                 @media only screen and (min-width: 375px) {
                   flex: 0 0 40%;
                 }
+
+                @media only screen and (min-width: 1024px) {
+                  font-size: 1.25rem;
+                }
               `}
             >
               {skill}
@@ -110,7 +114,16 @@ const Skills = () => {
               `}
             >
               {[...Array(level)].map((_, index) => (
-                <span key={index} role="img" aria-label="lightning">
+                <span
+                  key={index}
+                  role="img"
+                  aria-label="lightning"
+                  css={css`
+                    @media only screen and (min-width: 1024px) {
+                      font-size: 1.4rem;
+                    }
+                  `}
+                >
                   ⚡️
                 </span>
               ))}

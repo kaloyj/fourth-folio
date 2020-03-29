@@ -24,6 +24,18 @@ const ShowcasePreview = ({ item, isActive, onClick }) => {
           margin-right: 0;
           margin-bottom: 12%;
         }
+
+        @media only screen and (min-width: 1024px) {
+          width: 125px;
+          height: 125px;
+        }
+
+        @media only screen and (min-width: 1200px) {
+          width: 100px;
+          height: 100px;
+          margin-right: 4%;
+          margin-bottom: 6%;
+        }
       `}
       type="button"
       onClick={onClick}

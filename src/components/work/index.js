@@ -23,7 +23,7 @@ const Work = () => {
           margin-bottom: 1rem;
 
           @media only screen and (min-width: 768px) {
-            margin: 1rem 0;
+            margin: 1rem 0 1.5rem;
           }
         `}
       >

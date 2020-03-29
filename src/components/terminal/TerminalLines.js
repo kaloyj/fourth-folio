@@ -14,6 +14,10 @@ const TerminalLines = ({ text }) => {
         flex-flow: row wrap;
         width: 96%;
         margin: 1.5% 2%;
+
+        @media only screen and (min-width: 768px) {
+          font-size: 0.9rem;
+        }
       `}
     >
       {showMarker && (
@@ -44,6 +48,10 @@ const TerminalLines = ({ text }) => {
               css={css`
                 flex: 0 0 100%;
                 margin-bottom: 0.35rem;
+
+                @media only screen and (min-width: 768px) {
+                  margin-bottom: 0.75rem;
+                }
               `}
             >
               <span

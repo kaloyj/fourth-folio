@@ -37,6 +37,11 @@ const About = () => {
             font-weight: 300;
             font-size: 1rem;
             line-height: 1.5rem;
+
+            @media only screen and (min-width: 1024px) {
+              font-size: 1.4rem;
+              line-height: 1.9rem;
+            }
           `}
         >
           Hi! My name's Carlo Janea, a frontend engineer with the heart of

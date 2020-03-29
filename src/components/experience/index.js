@@ -68,7 +68,7 @@ const Experience = () => {
           margin-bottom: 2rem;
         `}
       >
-        <div
+        {/* <div
           css={css`
             height: 100%;
             border: 1px solid white;
@@ -77,7 +77,7 @@ const Experience = () => {
             top: 0;
             left: 40%;
           `}
-        ></div>
+        ></div> */}
 
         {EXPERIENCES.map(experience => (
           <ExperienceItem

@@ -31,6 +31,11 @@ const ShowcaseDetails = ({ selected }) => {
           margin: 0 0 0 4%;
           flex: 0 0 76%;
         }
+
+        @media only screen and (min-width: 768px) {
+          margin-left: 2%;
+          flex: 0 0 76%;
+        }
       `}
     >
       <div
