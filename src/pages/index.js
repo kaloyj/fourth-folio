@@ -10,10 +10,16 @@ import Footer from "../components/footer"
 import Work from "../components/work"
 
 export const SectionHeaders = styled("h2")`
-  margin-top: 5rem;
+  margin-top: 1.5rem;
   width: 88%;
   margin-left: 6%;
   text-align: center;
+
+  @media only screen and (min-width: 768px) {
+    text-align: left;
+    margin-left: 4%;
+    font-size: 2rem;
+  }
 `
 
 const IndexPage = () => {

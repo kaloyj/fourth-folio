@@ -10,6 +10,10 @@ const Work = () => {
         margin-left: 4%;
         display: flex;
         flex-flow: row wrap;
+
+        @media only screen and (min-width: 768px) {
+          margin-bottom: 7.5rem;
+        }
       `}
     >
       <SectionHeaders
@@ -17,6 +21,10 @@ const Work = () => {
         css={css`
           margin-top: 1rem;
           margin-bottom: 1rem;
+
+          @media only screen and (min-width: 768px) {
+            margin: 1rem 0;
+          }
         `}
       >
         Work & Projects

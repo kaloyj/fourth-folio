@@ -6,7 +6,7 @@ const ShowcasePreview = ({ item, isActive, onClick }) => {
   return (
     <button
       css={css`
-        flex: 0 0 22%;
+        width: 70px;
         border: 3px solid ${isActive ? COLOR_SCHEME.accent : "transparent"};
         height: 70px;
         border-radius: 10px;
@@ -17,6 +17,13 @@ const ShowcasePreview = ({ item, isActive, onClick }) => {
         color: white;
         font-weight: 700;
         font-size: 1.25rem;
+
+        @media only screen and (min-width: 768px) {
+          width: 100px;
+          height: 100px;
+          margin-right: 0;
+          margin-bottom: 12%;
+        }
       `}
       type="button"
       onClick={onClick}

@@ -66,6 +66,7 @@ const Navbar = ({ setAvoidScroll }) => {
           </button>
           {NAVIGATION_LINKS.map(navLink => (
             <a
+              key={navLink.label}
               href={navLink.href}
               target={navLink.external ? "_blank" : "_self"}
               css={css`
@@ -94,6 +95,10 @@ const Navbar = ({ setAvoidScroll }) => {
           flex-flow: row wrap;
           justify-content: space-between;
           align-items: center;
+
+          @media only screen and (min-width: 768px) {
+            margin: 0 0 1rem;
+          }
         `}
       >
         <div

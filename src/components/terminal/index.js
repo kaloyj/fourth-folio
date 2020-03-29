@@ -21,8 +21,8 @@ const Terminal = () => {
   return (
     <div
       css={css`
-        height: 47.5vh;
-        width: 92%;
+        height: 42.5vh;
+        flex: 0 0 92%;
         margin: 2% 4% 0;
 
         display: flex;
@@ -35,6 +35,16 @@ const Terminal = () => {
           -2px 2px 2px -2px rgba(16, 17, 18, 1);
         box-shadow: -12px 10px 26px -5px rgba(16, 17, 18, 1),
           -2px 2px 2px -2px rgba(16, 17, 18, 1);
+
+        @media only screen and (min-width: 768px) {
+          width: 53%;
+          height: 30vh;
+          margin: 0 4%;
+          position: absolute;
+          top: -40%;
+          right: 0;
+          order: 2;
+        }
       `}
     >
       <div

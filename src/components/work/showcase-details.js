@@ -13,7 +13,7 @@ const ShowcaseDetails = ({ selected }) => {
   return (
     <div
       css={css`
-        width: 100%;
+        flex: 0 0 100%;
         margin: 1rem 0 3rem;
         min-height: 60vh;
         display: flex;
@@ -26,6 +26,11 @@ const ShowcaseDetails = ({ selected }) => {
           -2px 2px 2px -2px rgba(16, 17, 18, 1);
         box-shadow: -12px 10px 26px -5px rgba(16, 17, 18, 1),
           -2px 2px 2px -2px rgba(16, 17, 18, 1);
+
+        @media only screen and (min-width: 768px) {
+          margin: 0 0 0 4%;
+          flex: 0 0 76%;
+        }
       `}
     >
       <div
@@ -39,6 +44,11 @@ const ShowcaseDetails = ({ selected }) => {
           justify-content: center;
           overflow: hidden;
           position: relative;
+          border: none;
+
+          @media only screen and (min-width: 768px) {
+            height: 300px;
+          }
         `}
       >
         {photo ? (
@@ -81,7 +91,15 @@ const ShowcaseDetails = ({ selected }) => {
           height: auto;
         `}
       >
-        <h2 css={css``}>{title}</h2>
+        <h2
+          css={css`
+            @media only screen and (min-width: 768px) {
+              font-size: 2rem;
+            }
+          `}
+        >
+          {title}
+        </h2>
 
         <div
           css={css`
@@ -90,12 +108,15 @@ const ShowcaseDetails = ({ selected }) => {
           `}
         >
           {tech.map((techItem, index) => (
-            <Fragment>
+            <Fragment key={techItem}>
               <span
-                key={techItem}
                 css={css`
                   color: white;
                   font-size: 0.75rem;
+
+                  @media only screen and (min-width: 768px) {
+                    font-size: 0.85rem;
+                  }
                 `}
               >
                 {techItem}
@@ -124,6 +145,11 @@ const ShowcaseDetails = ({ selected }) => {
               color: white;
               font-size: 0.85rem;
               margin-bottom: 1rem;
+
+              @media only screen and (min-width: 768px) {
+                font-size: 1rem;
+                margin-bottom: 1.25rem;
+              }
             `}
           >
             {paragraph}

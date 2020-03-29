@@ -1,4 +1,4 @@
-import React, { Fragment } from "react"
+import React from "react"
 import { css } from "@emotion/core"
 import Terminal from "./terminal"
 import { COLOR_SCHEME } from "./layout"
@@ -6,53 +6,96 @@ import Navbar from "./navbar"
 
 const Hero = ({ setAvoidScroll }) => {
   return (
-    <Fragment>
+    <div
+      css={css`
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        flex-flow: row wrap;
+        align-content: flex-start;
+
+        @media only screen and (min-width: 768px) {
+          align-content: space-between;
+        }
+      `}
+    >
       <Navbar setAvoidScroll={setAvoidScroll}></Navbar>
-      <Terminal></Terminal>
       <div
         css={css`
+          position: relative;
           flex: 0 0 100%;
           display: flex;
           flex-flow: row wrap;
-          justify-content: flex-end;
-          transform: translateY(-35%);
-          margin-bottom: -5%;
         `}
       >
-        <h1
+        <Terminal></Terminal>
+        <div
           css={css`
-            flex: 0 0 54%;
-            margin-right: 6%;
-            font-size: 2.5rem;
-            text-align: right;
-            line-height: 2.25rem;
+            flex: 0 0 100%;
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: flex-end;
+            transform: translateY(-35%);
+            margin-bottom: -7.5%;
 
             @media only screen and (min-width: 375px) {
-              font-size: 4.5rem;
-              line-height: 4rem;
+              margin-bottom: 0;
+            }
+
+            @media only screen and (min-width: 768px) {
+              justify-content: flex-start;
+              transform: translateY(0%);
+              order: 1;
             }
           `}
         >
-          Carlo Janea
-        </h1>
+          <h1
+            css={css`
+              flex: 0 0 54%;
+              margin-right: 6%;
+              font-size: 2.5rem;
+              text-align: right;
+              line-height: 2.25rem;
 
-        <h3
-          css={css`
-            flex: 0 0 64%;
-            margin-right: 6%;
-            font-size: 0.85rem;
-            text-align: right;
-            font-weight: 200;
-            margin-top: 0.5rem;
-            font-family: Source Code Pro;
+              @media only screen and (min-width: 375px) {
+                font-size: 4.5rem;
+                line-height: 4rem;
+              }
 
-            @media only screen and (min-width: 375px) {
-              font-size: 1.125rem;
-            }
-          `}
-        >
-          Frontend Engineer
-        </h3>
+              @media only screen and (min-width: 768px) {
+                text-align: left;
+                margin-right: 0;
+                margin-left: 4%;
+              }
+            `}
+          >
+            Carlo Janea
+          </h1>
+
+          <h3
+            css={css`
+              flex: 0 0 64%;
+              margin-right: 6%;
+              font-size: 0.85rem;
+              text-align: right;
+              font-weight: 200;
+              margin-top: 0.5rem;
+
+              @media only screen and (min-width: 375px) {
+                font-size: 1.125rem;
+              }
+
+              @media only screen and (min-width: 768px) {
+                flex: 0 0 64%;
+                text-align: left;
+                margin: 0.5rem 0 1rem 5%;
+                font-size: 1.5rem;
+              }
+            `}
+          >
+            Frontend Engineer
+          </h3>
+        </div>
       </div>
 
       <div
@@ -66,19 +109,27 @@ const Hero = ({ setAvoidScroll }) => {
           @media only screen and (min-width: 375px) {
             margin-top: 0;
           }
+
+          @media only screen and (min-width: 768px) {
+            flex: 0 0 92%;
+            justify-content: flex-start;
+            margin-left: 4%;
+            margin-bottom: 8%;
+            order: 3;
+          }
         `}
       >
         <div
           css={css`
-            height: 48px;
-            width: 48px;
             display: flex;
             flex-flow: row wrap;
+            flex: 0 0 5%;
+            justify-content: center;
           `}
         >
           <svg
-            width="100%"
-            height="100%"
+            width="48px"
+            height="48px"
             viewBox="0 0 24 24"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -107,7 +158,7 @@ const Hero = ({ setAvoidScroll }) => {
           </div>
         </div>
       </div>
-    </Fragment>
+    </div>
   )
 }
 

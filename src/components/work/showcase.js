@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react"
+import React, { useState } from "react"
 import { css } from "@emotion/core"
 import ShowcasePreview from "./showcase-preview"
 import ShowcaseDetails from "./showcase-details"
@@ -50,13 +50,25 @@ const Showcase = () => {
   const [selectedWork, setSelectedWork] = useState(PAST_WORKS[0])
 
   return (
-    <Fragment>
+    <div
+      css={css`
+        flex: 0 0 100%;
+        display: flex;
+        flex-flow: row wrap;
+      `}
+    >
       <div
         css={css`
           flex: 0 0 100%;
           display: flex;
           flex-flow: row wrap;
           justify-content: space-between;
+
+          @media only screen and (min-width: 768px) {
+            justify-content: flex-start;
+            flex: 0 0 20%;
+            flex-flow: column wrap;
+          }
         `}
       >
         {PAST_WORKS.map(work => (
@@ -70,7 +82,7 @@ const Showcase = () => {
       </div>
 
       <ShowcaseDetails selected={selectedWork}></ShowcaseDetails>
-    </Fragment>
+    </div>
   )
 }
 

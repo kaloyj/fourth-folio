@@ -9,7 +9,7 @@ const About = () => {
       <div
         css={css`
           min-height: 50vh;
-          width: 88%;
+          flex: 0 0 88%;
           margin: 1rem 6% 1rem;
           display: flex;
           flex-flow: row wrap;
@@ -23,6 +23,11 @@ const About = () => {
             -2px 2px 2px -2px rgba(16, 17, 18, 1);
           box-shadow: -12px 10px 26px -5px rgba(16, 17, 18, 1),
             -2px 2px 2px -2px rgba(16, 17, 18, 1);
+
+          @media only screen and (min-width: 768px) {
+            flex: 0 0 34%;
+            margin: 1rem 0 1rem 4%;
+          }
         `}
       >
         <p

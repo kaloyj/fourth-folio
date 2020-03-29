@@ -16,6 +16,13 @@ const ExperienceItem = ({
         flex-flow: row wrap;
         justify-content: space-between;
         position: relative;
+
+        @media only screen and (min-width: 768px) {
+          span,
+          h4 {
+            font-size: 1rem;
+          }
+        }
       `}
     >
       <div
@@ -33,6 +40,12 @@ const ExperienceItem = ({
           @media only screen and (min-width: 375px) {
             height: 35px;
             width: 35px;
+          }
+
+          @media only screen and (min-width: 768px) {
+            height: 40px;
+            width: 40px;
+            transform: translate(-62.5%, -15%);
           }
         `}
       ></div>
@@ -55,6 +68,7 @@ const ExperienceItem = ({
       >
         <h4
           css={css`
+            flex: 0 0 100%;
             color: ${COLOR_SCHEME.accent};
             font-family: Source Code Pro;
           `}
@@ -64,6 +78,9 @@ const ExperienceItem = ({
         <span
           css={css`
             margin: 0.5rem 0;
+            @media only screen and (min-width: 768px) {
+              margin: 1rem 0;
+            }
           `}
         >
           {yearStart} - {yearEnd}
@@ -74,6 +91,9 @@ const ExperienceItem = ({
             css={css`
               margin-bottom: 0.5rem;
               flex: 0 0 100%;
+              @media only screen and (min-width: 768px) {
+                margin-bottom: 1rem;
+              }
             `}
           >
             {item}

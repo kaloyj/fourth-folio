@@ -48,6 +48,13 @@ const Contact = () => {
         @media only screen and (min-width: 360px) {
           top: -40%;
         }
+
+        @media only screen and (min-width: 768px) {
+          left: 0;
+          left: 65%;
+          transform: translate(-50%, -20%);
+          width: 60%;
+        }
       `}
     >
       <legend

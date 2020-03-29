@@ -1,7 +1,7 @@
 import React, { Fragment } from "react"
 import { css } from "@emotion/core"
 import { COLOR_SCHEME } from "./layout"
-import { SectionHeaders } from "../pages"
+
 const skills = [
   {
     skill: "JS",
@@ -40,18 +40,18 @@ const skills = [
 const Skills = () => {
   return (
     <Fragment>
-      <SectionHeaders
+      {/* <SectionHeaders
         css={css`
           margin-top: 1rem;
           margin-bottom: 1rem;
         `}
       >
         Skills
-      </SectionHeaders>
+      </SectionHeaders> */}
       <div
         css={css`
           min-height: 50vh;
-          width: 88%;
+          flex: 0 0 88%;
           margin: 0 6%;
           display: flex;
           flex-flow: row wrap;
@@ -65,6 +65,11 @@ const Skills = () => {
             -2px 2px 2px -2px rgba(23, 25, 28, 1);
           box-shadow: -12px 10px 26px -5px rgba(16, 17, 18, 1),
             -2px 2px 2px -2px rgba(16, 17, 18, 1);
+
+          @media only screen and (min-width: 768px) {
+            flex: 0 0 54%;
+            margin: 1rem 0 1rem 4%;
+          }
         `}
       >
         {skills.map(({ skill, level }) => (

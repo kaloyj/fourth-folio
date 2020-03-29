@@ -35,13 +35,22 @@ const Footer = () => {
     <footer
       id="contact"
       css={css`
-        width: 100%;
+        flex: 0 0 100%;
         min-height: 72.5vh;
         display: flex;
         flex-flow: row wrap;
         position: relative;
         background-color: ${COLOR_SCHEME.darkBlack};
         margin-top: 14rem;
+
+        @media only screen and (min-width: 768px) {
+          min-height: 50vh;
+        }
+
+        @media only screen and (min-width: 1024px) {
+          min-height: 45vh;
+          margin-top: 20rem;
+        }
       `}
     >
       <Contact></Contact>
@@ -60,6 +69,10 @@ const Footer = () => {
           @media only screen and (min-width: 375px) {
             padding-bottom: 3.75rem;
           }
+
+          @media only screen and (min-width: 1024px) {
+            padding-bottom: 5rem;
+          }
         `}
       >
         <h4
@@ -77,8 +90,8 @@ const Footer = () => {
             @media only screen and (min-width: 768px) {
               justify-content: flex-end;
               text-align: right;
-              flex: 0 0 30%;
-              margin-right: 15%;
+              flex: 0 0 92%;
+              margin-right: 4%;
             }
           `}
         >
@@ -95,8 +108,9 @@ const Footer = () => {
             margin-top: 4%;
 
             @media only screen and (min-width: 768px) {
+              flex: 0 0 92%;
               margin-top: 1%;
-              margin-right: 15%;
+              margin-right: 4%;
               justify-content: flex-end;
 
               a:last-of-type {
