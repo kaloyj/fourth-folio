@@ -1,8 +1,9 @@
 import React from "react"
 import { css } from "@emotion/core"
 import { motion } from "framer-motion"
-import { COLOR_SCHEME } from "./layout"
-import Navbar from "./navbar"
+import { COLOR_SCHEME } from "../layout"
+import Navbar from "../navbar"
+import HeroBackground from "./hero-backdrop"
 
 const Hero = ({ setAvoidScroll }) => {
   return (
@@ -13,6 +14,12 @@ const Hero = ({ setAvoidScroll }) => {
         display: flex;
         flex-flow: row wrap;
         align-content: space-between;
+        background: ${COLOR_SCHEME.darkBlack};
+        background: linear-gradient(
+          180deg,
+          rgba(16, 17, 18, 1) 40%,
+          rgba(16, 17, 18, 0) 100%
+        );
       `}
     >
       <Navbar setAvoidScroll={setAvoidScroll}></Navbar>
@@ -178,6 +185,7 @@ const Hero = ({ setAvoidScroll }) => {
           </div>
         </div>
       </div>
+      <HeroBackground></HeroBackground>
     </div>
   )
 }
