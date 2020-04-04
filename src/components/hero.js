@@ -1,6 +1,6 @@
 import React from "react"
 import { css } from "@emotion/core"
-import Terminal from "./terminal"
+import { motion } from "framer-motion"
 import { COLOR_SCHEME } from "./layout"
 import Navbar from "./navbar"
 
@@ -12,11 +12,7 @@ const Hero = ({ setAvoidScroll }) => {
         width: 100vw;
         display: flex;
         flex-flow: row wrap;
-        align-content: flex-start;
-
-        @media only screen and (min-width: 768px) {
-          align-content: space-between;
-        }
+        align-content: space-between;
       `}
     >
       <Navbar setAvoidScroll={setAvoidScroll}></Navbar>
@@ -33,15 +29,12 @@ const Hero = ({ setAvoidScroll }) => {
           }
         `}
       >
-        <Terminal></Terminal>
         <div
           css={css`
             flex: 0 0 100%;
             display: flex;
             flex-flow: row wrap;
             justify-content: flex-end;
-            transform: translateY(-35%);
-            margin-bottom: -7.5%;
 
             @media only screen and (min-width: 375px) {
               margin-bottom: 0;
@@ -49,12 +42,10 @@ const Hero = ({ setAvoidScroll }) => {
 
             @media only screen and (min-width: 768px) {
               justify-content: flex-start;
-              transform: translateY(0%);
-              order: 1;
             }
           `}
         >
-          <h1
+          <motion.h1
             css={css`
               flex: 0 0 54%;
               margin-right: 6%;
@@ -77,11 +68,14 @@ const Hero = ({ setAvoidScroll }) => {
                 flex: 0 0 64%;
               }
             `}
+            initial={{ y: "100%", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ ease: "easeOut", duration: 0.4 }}
           >
             Carlo Janea
-          </h1>
+          </motion.h1>
 
-          <h3
+          <motion.h3
             css={css`
               flex: 0 0 64%;
               margin-right: 6%;
@@ -101,9 +95,12 @@ const Hero = ({ setAvoidScroll }) => {
                 font-size: 1.5rem;
               }
             `}
+            initial={{ y: "-100%", opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ ease: "easeOut", duration: 0.4 }}
           >
             Frontend Engineer
-          </h3>
+          </motion.h3>
         </div>
       </div>
 
@@ -113,25 +110,17 @@ const Hero = ({ setAvoidScroll }) => {
           margin-left: 6%;
           display: flex;
           justify-content: flex-end;
-          margin-top: 1rem;
-
-          @media only screen and (min-width: 375px) {
-            margin-top: 0;
-          }
+          margin-bottom: 2rem;
 
           @media only screen and (min-width: 768px) {
             flex: 0 0 92%;
             justify-content: flex-start;
             margin-left: 4%;
-            margin-bottom: 8%;
-            order: 3;
           }
 
           @media only screen and (min-width: 1200px) {
             flex: 0 0 80%;
             margin-left: 10%;
-            margin-top: 2rem;
-            margin-bottom: 2%;
           }
         `}
       >
@@ -164,7 +153,7 @@ const Hero = ({ setAvoidScroll }) => {
             <path
               d="M16 17L12 21M12 21L8 17M12 21L12 3"
               stroke={COLOR_SCHEME.accent}
-              strokeWidth="1.5"
+              strokeWidth="1"
               strokeLinecap="round"
               strokeLinejoin="round"
             />

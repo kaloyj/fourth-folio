@@ -4,6 +4,7 @@ import Img from "gatsby-image"
 import useMainPhoto from "../hooks/useMainPhoto"
 import { COLOR_SCHEME } from "./layout"
 import NavbarMenu from "./navbar-menu"
+import { AnimatePresence, motion } from "framer-motion"
 
 const getWidth = () =>
   (typeof window !== "undefined" && window.window.innerWidth) ||
@@ -12,16 +13,16 @@ const getWidth = () =>
 
 // these are the only breakpoints
 // we currently consider
-export const BREAPOINTS_TYPE = {
+export const BREAKPOINTS_TYPE = {
   MOBILE: "mobile",
   TABLET: "tablet",
   HUGE_TABLET: "huge_tablet",
 }
 
 const getBreakPoint = width => {
-  if (width >= 1024) return BREAPOINTS_TYPE.HUGE_TABLET
-  if (width >= 768) return BREAPOINTS_TYPE.TABLET
-  return BREAPOINTS_TYPE.MOBILE
+  if (width >= 1024) return BREAKPOINTS_TYPE.HUGE_TABLET
+  if (width >= 768) return BREAKPOINTS_TYPE.TABLET
+  return BREAKPOINTS_TYPE.MOBILE
 }
 
 const Navbar = ({ setAvoidScroll }) => {
@@ -84,8 +85,8 @@ const Navbar = ({ setAvoidScroll }) => {
       >
         <Img fluid={mainPhoto}></Img>
       </div>
-      {currentBreakpoint !== BREAPOINTS_TYPE.HUGE_TABLET && (
-        <button
+      {currentBreakpoint !== BREAKPOINTS_TYPE.HUGE_TABLET && (
+        <motion.button
           type="button"
           css={css`
             height: 30px;
@@ -102,6 +103,8 @@ const Navbar = ({ setAvoidScroll }) => {
           onClick={() => {
             setIsShowingMenu(true)
           }}
+          whileHover={{ scale: 1.125 }}
+          whileTap={{ scale: 0.95 }}
         >
           <svg
             width="100%"
@@ -118,15 +121,18 @@ const Navbar = ({ setAvoidScroll }) => {
               strokeLinejoin="round"
             />
           </svg>
-        </button>
+        </motion.button>
       )}
 
-      {(isShowingMenu || currentBreakpoint === BREAPOINTS_TYPE.HUGE_TABLET) && (
-        <NavbarMenu
-          setIsShowingMenu={setIsShowingMenu}
-          currentBreakpoint={currentBreakpoint}
-        ></NavbarMenu>
-      )}
+      <AnimatePresence>
+        {(isShowingMenu ||
+          currentBreakpoint === BREAKPOINTS_TYPE.HUGE_TABLET) && (
+          <NavbarMenu
+            setIsShowingMenu={setIsShowingMenu}
+            currentBreakpoint={currentBreakpoint}
+          ></NavbarMenu>
+        )}
+      </AnimatePresence>
     </div>
   )
 }

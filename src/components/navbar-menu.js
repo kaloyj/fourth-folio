@@ -1,7 +1,8 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { css } from "@emotion/core"
 import { COLOR_SCHEME } from "./layout"
-import { BREAPOINTS_TYPE } from "./navbar"
+import { BREAKPOINTS_TYPE } from "./navbar"
+import { motion, usePresence } from "framer-motion"
 
 const NAVIGATION_LINKS = [
   {
@@ -28,14 +29,20 @@ const NAVIGATION_LINKS = [
 ]
 
 const NavbarMenu = ({ currentBreakpoint, setIsShowingMenu }) => {
+  const [isPresent, safeToRemove] = usePresence()
+
+  useEffect(() => {
+    if (!isPresent) setTimeout(safeToRemove, 500)
+  }, [isPresent, safeToRemove])
+
   switch (currentBreakpoint) {
-    case BREAPOINTS_TYPE.HUGE_TABLET:
+    case BREAKPOINTS_TYPE.HUGE_TABLET:
       return <NavbarMenuList></NavbarMenuList>
-    case BREAPOINTS_TYPE.TABLET:
-    case BREAPOINTS_TYPE.MOBILE:
+    case BREAKPOINTS_TYPE.TABLET:
+    case BREAKPOINTS_TYPE.MOBILE:
     default:
       return (
-        <div
+        <motion.div
           css={css`
             width: 100vw;
             height: 100vh;
@@ -49,6 +56,10 @@ const NavbarMenu = ({ currentBreakpoint, setIsShowingMenu }) => {
             left: 0;
             z-index: 1;
           `}
+          initial={{ x: "100%" }}
+          animate={{ x: 0 }}
+          exit={{ x: "100%" }}
+          transition={{ duration: 0.4 }}
         >
           <button
             type="button"
@@ -86,7 +97,7 @@ const NavbarMenu = ({ currentBreakpoint, setIsShowingMenu }) => {
               {navLink.label}
             </a>
           ))}
-        </div>
+        </motion.div>
       )
   }
 }

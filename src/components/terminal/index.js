@@ -2,6 +2,7 @@ import React from "react"
 import { css } from "@emotion/core"
 import { COLOR_SCHEME } from "../layout"
 import TerminalLines from "./TerminalLines"
+import { motion } from "framer-motion"
 
 const terminalLines = [
   {
@@ -19,7 +20,7 @@ const terminalLines = [
 const headerButtons = ["browserClose", "browserMinimize", "browserMaximize"]
 const Terminal = () => {
   return (
-    <div
+    <motion.div
       css={css`
         height: 42.5vh;
         flex: 0 0 92%;
@@ -57,6 +58,9 @@ const Terminal = () => {
           top: 50%;
         }
       `}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ ease: "easeOut", duration: 0.7 }}
     >
       <div
         css={css`
@@ -112,7 +116,7 @@ const Terminal = () => {
           <TerminalLines text={text} key={index}></TerminalLines>
         ))}
       </div>
-    </div>
+    </motion.div>
   )
 }
 
