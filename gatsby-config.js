@@ -18,13 +18,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `Carlo Janea's Portfolio`,
+        short_name: `cjanea-portfolio`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#101112`,
+        theme_color: `#47FF0C`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/carlo-photo.jpeg`, // This path is relative to the root of the site.
       },
     },
     "gatsby-plugin-emotion",
