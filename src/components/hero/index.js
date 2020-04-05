@@ -41,34 +41,19 @@ const Hero = ({ setAvoidScroll }) => {
             flex: 0 0 100%;
             display: flex;
             flex-flow: row wrap;
-            justify-content: flex-end;
-
-            @media only screen and (min-width: 375px) {
-              margin-bottom: 0;
-            }
-
-            @media only screen and (min-width: 768px) {
-              justify-content: flex-start;
-            }
+            justify-content: center;
           `}
         >
           <motion.h1
             css={css`
               flex: 0 0 54%;
-              margin-right: 6%;
-              font-size: 2.5rem;
-              text-align: right;
-              line-height: 2.25rem;
+              font-size: 2.75rem;
+              line-height: 2.5rem;
+              text-align: center;
 
               @media only screen and (min-width: 375px) {
                 font-size: 4.5rem;
                 line-height: 4rem;
-              }
-
-              @media only screen and (min-width: 768px) {
-                text-align: left;
-                margin-right: 0;
-                margin-left: 4%;
               }
 
               @media only screen and (min-width: 1024px) {
@@ -85,9 +70,8 @@ const Hero = ({ setAvoidScroll }) => {
           <motion.h3
             css={css`
               flex: 0 0 64%;
-              margin-right: 6%;
               font-size: 0.85rem;
-              text-align: right;
+              text-align: center;
               font-weight: 200;
               margin-top: 0.5rem;
 
@@ -97,8 +81,6 @@ const Hero = ({ setAvoidScroll }) => {
 
               @media only screen and (min-width: 768px) {
                 flex: 0 0 64%;
-                text-align: left;
-                margin: 0.5rem 0 1rem 4.5%;
                 font-size: 1.5rem;
               }
             `}
@@ -116,19 +98,8 @@ const Hero = ({ setAvoidScroll }) => {
           flex: 0 0 88%;
           margin-left: 6%;
           display: flex;
-          justify-content: flex-end;
+          justify-content: center;
           margin-bottom: 2rem;
-
-          @media only screen and (min-width: 768px) {
-            flex: 0 0 92%;
-            justify-content: flex-start;
-            margin-left: 4%;
-          }
-
-          @media only screen and (min-width: 1200px) {
-            flex: 0 0 80%;
-            margin-left: 10%;
-          }
         `}
       >
         <div
@@ -143,10 +114,6 @@ const Hero = ({ setAvoidScroll }) => {
                 height: 64px;
                 width: 64px;
               }
-            }
-
-            @media only screen and (min-width: 1200px) {
-              margin-left: 4%;
             }
           `}
         >
@@ -173,7 +140,6 @@ const Hero = ({ setAvoidScroll }) => {
               font-size: 0.7rem;
               font-weight: 400;
               margin-top: 0.4rem;
-              letter-spacing: 0.125rem;
               text-transform: uppercase;
 
               @media only screen and (min-width: 1024px) {

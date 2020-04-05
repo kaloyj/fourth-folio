@@ -70,7 +70,7 @@ const Navbar = ({ setAvoidScroll }) => {
           height: 50px;
           border-radius: 50%;
           overflow: hidden;
-          border: 2px solid ${COLOR_SCHEME.accent};
+          border: 3px solid ${COLOR_SCHEME.accent};
 
           @media only screen and (min-width: 375px) {
             width: 70px;

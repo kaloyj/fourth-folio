@@ -1,6 +1,7 @@
 import React from "react"
 import { css } from "@emotion/core"
 import { motion } from "framer-motion"
+import { COLOR_SCHEME } from "../layout"
 
 const WORDS = [
   "UI/UX",
@@ -23,7 +24,7 @@ const WORDS = [
 // we multiply to max - min so the range is between 0 and max-min
 // we add 1 since we're using floor(), to reach max
 // we add min so that it gets min -> max
-const randomIndexGenerator = (min, max) =>
+const randomIntGenerator = (min, max) =>
   Math.floor(Math.random() * (max - min + 1)) + min
 
 const generateRandomWords = () => {
@@ -31,25 +32,30 @@ const generateRandomWords = () => {
   let randomWords = []
 
   for (let i = 0; i < WORDS_LIMIT; i++)
-    randomWords.push(WORDS[randomIndexGenerator(0, WORDS_LIMIT)])
+    randomWords.push(WORDS[randomIntGenerator(0, WORDS_LIMIT)])
 
   return randomWords
 }
 
-const DROPLINE_COUNT = 12
+const DROPLINE_COUNT = 25
 
-const parentVariants = {
+const generateParentVariants = (delay = 0.4) => ({
   show: {
     transition: {
-      staggerChildren: 0.3,
+      staggerChildren: 0.25,
+      delayChildren: delay,
     },
   },
-}
+})
 
-const childVariants = {
+const generateChildVariants = () => ({
   hidden: { opacity: 0 },
-  show: { opacity: 0.2, transition: { duration: 0.1 } },
-}
+  show: {
+    opacity: 0.2,
+    transition: { duration: 0.1, yoyo: Infinity, repeatDelay: 4 },
+  },
+})
+
 const HeroBackground = () => {
   return (
     <div
@@ -75,9 +81,13 @@ const HeroBackground = () => {
               flex-flow: row nowrap;
               align-items: center;
               margin-left: -1rem;
-              margin-bottom: 1.5rem;
+              margin-bottom: 0.25rem;
+
+              @media only screen and (min-width: 768px) {
+                margin-bottom: 0.4rem;
+              }
             `}
-            variants={parentVariants}
+            variants={generateParentVariants()}
             initial="hidden"
             animate="show"
           >
@@ -86,13 +96,20 @@ const HeroBackground = () => {
                 key={ndx}
                 css={css`
                   display: inline-block;
-                  color: white;
+                  color: ${COLOR_SCHEME.codeGreen};
                   margin-right: 0.5rem;
+
+                  @media only screen and (min-width: 768px) {
+                    font-size: 2rem;
+                    margin-right: 1rem;
+                  }
                 `}
-                variants={parentVariants}
+                variants={generateParentVariants(
+                  ndx + randomIntGenerator(1, 5)
+                )}
               >
                 {Array.from(word).map((letter, index) => (
-                  <motion.span key={index} variants={childVariants}>
+                  <motion.span key={index} variants={generateChildVariants()}>
                     {letter}
                   </motion.span>
                 ))}
