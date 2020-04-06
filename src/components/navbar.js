@@ -94,6 +94,7 @@ const Navbar = ({ setAvoidScroll }) => {
             border: none;
             background-color: transparent;
             padding: 0;
+            z-index: 1;
 
             @media only screen and (min-width: 375px) {
               width: 36px;

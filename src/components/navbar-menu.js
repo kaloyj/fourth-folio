@@ -111,6 +111,7 @@ const NavbarMenuList = () => {
         flex-flow: row wrap;
         justify-content: flex-end;
         align-items: center;
+        z-index: 1;
 
         a:not(:last-of-type) {
           margin-right: 1.5rem;
