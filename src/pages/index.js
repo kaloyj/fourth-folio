@@ -44,6 +44,11 @@ const IndexPage = () => {
                 flex: 0 0 80%;
                 margin-left: 10%;
               }
+
+              @media only screen and (min-width: 1920px) {
+                flex: 0 0 60%;
+                margin-left: 20%;
+              }
             `}
           >
             <About></About>

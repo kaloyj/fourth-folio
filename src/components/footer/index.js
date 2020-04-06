@@ -98,6 +98,11 @@ const Footer = () => {
               flex: 0 0 72%;
               margin: 0 14%;
             }
+
+            @media only screen and (min-width: 1920px) {
+              flex: 0 0 56%;
+              margin: 0 22%;
+            }
           `}
         >
           © {new Date().getFullYear()}, Carlo Janea
@@ -126,6 +131,11 @@ const Footer = () => {
             @media only screen and (min-width: 1200px) {
               flex: 0 0 72%;
               margin: 1% 14%;
+            }
+
+            @media only screen and (min-width: 1920px) {
+              flex: 0 0 56%;
+              margin: 1% 22%;
             }
           `}
         >

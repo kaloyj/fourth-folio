@@ -6,6 +6,8 @@ export default function useMetadata() {
       site {
         siteMetadata {
           title
+          description
+          author
         }
       }
     }

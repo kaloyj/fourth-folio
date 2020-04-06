@@ -59,8 +59,13 @@ const Navbar = ({ setAvoidScroll }) => {
         align-items: center;
 
         @media only screen and (min-width: 1200px) {
-          flex: 0 0 80%;
-          margin: 1.5rem 10%;
+          flex: 0 0 76%;
+          margin: 1.5rem 12%;
+        }
+
+        @media only screen and (min-width: 1920px) {
+          flex: 0 0 56%;
+          margin: 1.5rem 22%;
         }
       `}
     >

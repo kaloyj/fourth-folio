@@ -33,7 +33,7 @@ const ShowcasePreview = ({ item, isActive, onClick }) => {
         @media only screen and (min-width: 1200px) {
           width: 100px;
           height: 100px;
-          margin-right: 4%;
+          margin-right: 6%;
           margin-bottom: 6%;
         }
       `}

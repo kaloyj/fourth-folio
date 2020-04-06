@@ -79,6 +79,12 @@ const Contact = () => {
           min-height: 40vh;
           padding: 3%;
         }
+
+        @media only screen and (min-width: 1920px) {
+          width: 25%;
+          left: 66%;
+          transform: translate(-50%, -35%);
+        }
       `}
     >
       <legend

@@ -37,7 +37,7 @@ const generateRandomWords = () => {
   return randomWords
 }
 
-const DROPLINE_COUNT = 25
+const DROPLINE_COUNT = 5
 
 const generateParentVariants = (delay = 0.4) => ({
   show: {
@@ -66,7 +66,6 @@ const HeroBackground = () => {
         top: 0;
         display: flex;
         flex-flow: row wrap;
-        align-content: flex-start;
         overflow: hidden;
       `}
     >
@@ -76,12 +75,11 @@ const HeroBackground = () => {
           <motion.div
             key={index}
             css={css`
-              flex: 1;
+              flex: 0 0 100%;
               display: flex;
-              flex-flow: row nowrap;
+              flex-flow: row wrap;
               align-items: center;
-              margin-left: -1rem;
-              margin-bottom: 0.25rem;
+              margin-left: ${-5 + randomIntGenerator(0, 10)}rem;
 
               @media only screen and (min-width: 768px) {
                 margin-bottom: 0.4rem;
@@ -97,11 +95,16 @@ const HeroBackground = () => {
                 css={css`
                   display: inline-block;
                   color: ${COLOR_SCHEME.codeGreen};
-                  margin-right: 0.5rem;
+                  margin-right: 1rem;
 
                   @media only screen and (min-width: 768px) {
                     font-size: 2rem;
                     margin-right: 1rem;
+                  }
+
+                  @media only screen and (min-width: 1024px) {
+                    font-size: 2.5rem;
+                    margin-right: 1.25rem;
                   }
                 `}
                 variants={generateParentVariants(

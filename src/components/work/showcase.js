@@ -74,7 +74,6 @@ const Showcase = () => {
             flex-flow: row wrap;
             flex: 0 0 22%;
             align-content: flex-start;
-            justify-content: space-between;
           }
         `}
       >

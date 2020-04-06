@@ -1,24 +1,16 @@
 import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
-import { useStaticQuery, graphql } from "gatsby"
+import useMetadata from "../hooks/useMetadata"
+import useMainPhoto from "../hooks/useMainPhoto"
 
-function SEO({ description, lang, meta, title }) {
-  const { site } = useStaticQuery(
-    graphql`
-      query {
-        site {
-          siteMetadata {
-            title
-            description
-            author
-          }
-        }
-      }
-    `
-  )
-
-  const metaDescription = description || site.siteMetadata.description
+const MAIN_URL = "https://carlojanea.com"
+function SEO({ meta, lang }) {
+  const { title, description, author, imageAlt } = useMetadata()
+  const {
+    resize: { src: mainPhoto },
+  } = useMainPhoto()
+  const metaAlt = imageAlt || "Carlo Janea smiling with trees on the background"
 
   return (
     <Helmet
@@ -26,11 +18,11 @@ function SEO({ description, lang, meta, title }) {
         lang,
       }}
       title={title}
-      titleTemplate={site.siteMetadata.title}
+      titleTemplate={title}
       meta={[
         {
           name: `description`,
-          content: metaDescription,
+          content: description,
         },
         {
           property: `og:title`,
@@ -38,7 +30,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           property: `og:description`,
-          content: metaDescription,
+          content: description,
         },
         {
           property: `og:type`,
@@ -50,7 +42,7 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:creator`,
-          content: site.siteMetadata.author,
+          content: author,
         },
         {
           name: `twitter:title`,
@@ -58,7 +50,19 @@ function SEO({ description, lang, meta, title }) {
         },
         {
           name: `twitter:description`,
-          content: metaDescription,
+          content: description,
+        },
+        {
+          property: `og:image`,
+          content: `${MAIN_URL}${mainPhoto}`,
+        },
+        {
+          name: `twitter:image`,
+          content: `${MAIN_URL}${mainPhoto}`,
+        },
+        {
+          name: `twitter:image:alt`,
+          content: metaAlt,
         },
       ].concat(meta)}
     />
@@ -72,10 +76,8 @@ SEO.defaultProps = {
 }
 
 SEO.propTypes = {
-  description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string.isRequired,
 }
 
 export default SEO
