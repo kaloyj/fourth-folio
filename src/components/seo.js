@@ -12,6 +12,7 @@ function SEO({ meta, lang }) {
   } = useMainPhoto()
   const metaAlt = imageAlt || "Carlo Janea smiling with trees on the background"
 
+  console.log({ mainPhoto })
   return (
     <Helmet
       htmlAttributes={{
@@ -63,6 +64,14 @@ function SEO({ meta, lang }) {
         {
           name: `twitter:image:alt`,
           content: metaAlt,
+        },
+        {
+          property: `og:image:width`,
+          content: `300`,
+        },
+        {
+          property: `og:image:height`,
+          content: `300`,
         },
       ].concat(meta)}
     />
