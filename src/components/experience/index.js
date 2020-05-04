@@ -24,6 +24,16 @@ const EXPERIENCES = [
     ],
   },
   {
+    yearStart: "Apr 2018",
+    yearEnd: "Aug 2018",
+    title: "Coding Avenue (Hireplicity)",
+    listTitle: "Software Developer Intern",
+    listItems: [
+      "learned software development first-hand with senior level mentors",
+      "maintained and worked on a learning platform built on PHP + React",
+    ],
+  },
+  {
     yearStart: "Jan 2019",
     yearEnd: "Dec 2019",
     title: "Full Scale",
@@ -68,17 +78,6 @@ const Experience = () => {
           margin-bottom: 2rem;
         `}
       >
-        {/* <div
-          css={css`
-            height: 100%;
-            border: 1px solid white;
-            width: 0;
-            position: absolute;
-            top: 0;
-            left: 40%;
-          `}
-        ></div> */}
-
         {EXPERIENCES.map(experience => (
           <ExperienceItem
             key={experience.title}

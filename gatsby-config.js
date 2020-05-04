@@ -24,7 +24,6 @@ module.exports = {
         background_color: `#101112`,
         theme_color: `#47FF0C`,
         display: `minimal-ui`,
-        icon: `src/images/carlo-photo.jpeg`, // This path is relative to the root of the site.
       },
     },
     "gatsby-plugin-emotion",
