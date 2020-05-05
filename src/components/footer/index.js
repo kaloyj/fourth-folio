@@ -140,19 +140,35 @@ const Footer = () => {
           `}
         >
           <SVGContainerLink href="https://github.com/kaloyj">
-            <Github height="100%" width="100%"></Github>
+            <Github
+              height="100%"
+              width="100%"
+              aria-label="github link"
+            ></Github>
           </SVGContainerLink>
 
           <SVGContainerLink href="https://www.linkedin.com/in/carlo-janea-2880a2132/">
-            <Linkedin height="100%" width="100%"></Linkedin>
+            <Linkedin
+              height="100%"
+              width="100%"
+              aria-label="linkedin link"
+            ></Linkedin>
           </SVGContainerLink>
 
           <SVGContainerLink href="https://twitter.com/carlojanea">
-            <Twitter height="100%" width="100%"></Twitter>
+            <Twitter
+              height="100%"
+              width="100%"
+              aria-label="twitter link"
+            ></Twitter>
           </SVGContainerLink>
 
           <RectangularSVGContainerLink href="https://codepen.io/henrypeviani">
-            <Codepen height="100%" width="100%"></Codepen>
+            <Codepen
+              height="100%"
+              width="100%"
+              aria-label="codepen link"
+            ></Codepen>
           </RectangularSVGContainerLink>
         </div>
       </div>

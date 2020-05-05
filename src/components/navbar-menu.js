@@ -105,6 +105,7 @@ const NavbarMenu = ({ currentBreakpoint, setIsShowingMenu }) => {
 const NavbarMenuList = () => {
   return (
     <div
+      aria-label="navigation menu list"
       css={css`
         flex: 0 0 70%;
         display: flex;

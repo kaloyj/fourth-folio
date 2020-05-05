@@ -5,6 +5,7 @@ import { COLOR_SCHEME } from "../layout"
 const ShowcasePreview = ({ item, isActive, onClick }) => {
   return (
     <button
+      aria-label={`Project: ${item.title}`}
       css={css`
         width: 70px;
         border: 3px solid ${isActive ? COLOR_SCHEME.accent : "transparent"};

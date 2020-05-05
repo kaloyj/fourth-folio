@@ -1,4 +1,4 @@
-import React, { Fragment } from "react"
+import React, { Fragment, useRef } from "react"
 import { css } from "@emotion/core"
 import Placeholder from "./assets/photo-placeholder.svg"
 import Img from "gatsby-image/withIEPolyfill"
@@ -8,10 +8,14 @@ import useShowcasePhotos from "../../hooks/useShowcasePhotos"
 
 const ShowcaseDetails = ({ selected }) => {
   const showcasePhotos = useShowcasePhotos()
+  const detailsRef = useRef(null)
   const { tech, title, description, imageRef } = selected
   const photo = imageRef ? showcasePhotos[imageRef] : ""
+
   return (
     <div
+      ref={detailsRef}
+      tabIndex={-1}
       css={css`
         flex: 0 0 100%;
         margin: 1rem 0 3rem;

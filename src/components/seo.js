@@ -12,7 +12,6 @@ function SEO({ meta, lang }) {
   } = useMainPhoto()
   const metaAlt = imageAlt || "Carlo Janea smiling with trees on the background"
 
-  console.log({ mainPhoto })
   return (
     <Helmet
       htmlAttributes={{

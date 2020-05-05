@@ -40,14 +40,6 @@ const skills = [
 const Skills = () => {
   return (
     <Fragment>
-      {/* <SectionHeaders
-        css={css`
-          margin-top: 1rem;
-          margin-bottom: 1rem;
-        `}
-      >
-        Skills
-      </SectionHeaders> */}
       <div
         css={css`
           min-height: 50vh;
@@ -102,6 +94,7 @@ const Skills = () => {
               {skill}
             </span>
             <div
+              aria-label={`experience level ${level} out of 10`}
               css={css`
                 margin-left: 5%;
                 flex: 0 0 50%;
@@ -117,10 +110,11 @@ const Skills = () => {
                 <span
                   key={index}
                   role="img"
-                  aria-label="lightning"
+                  aria-hidden
                   css={css`
                     @media only screen and (min-width: 1024px) {
                       font-size: 1.4rem;
+                      color: white;
                     }
                   `}
                 >

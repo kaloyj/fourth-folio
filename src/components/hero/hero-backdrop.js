@@ -58,7 +58,11 @@ const generateChildVariants = () => ({
 
 const HeroBackground = () => {
   return (
+    // dont show to screen readers
+    // since animation will just be
+    // annoying to them
     <div
+      aria-hidden
       css={css`
         height: 100vh;
         width: 100vw;
