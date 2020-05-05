@@ -15,7 +15,6 @@ const ShowcaseDetails = ({ selected }) => {
   return (
     <div
       ref={detailsRef}
-      tabIndex={-1}
       css={css`
         flex: 0 0 100%;
         margin: 1rem 0 3rem;
