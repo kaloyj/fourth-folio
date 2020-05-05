@@ -29,7 +29,7 @@ const EXPERIENCES = [
     title: "Coding Avenue (Hireplicity)",
     listTitle: "Software Developer Intern",
     listItems: [
-      "learned software development first-hand with senior level mentors",
+      "learned software development first-hand with industry experienced mentors",
       "maintained and worked on a learning platform built on PHP + React",
     ],
   },
