@@ -68,11 +68,7 @@ const Skills = () => {
           }
         `}
       >
-        <TerminalHeader
-          title="skills"
-          backgroundColor={COLOR_SCHEME.mediumBlack}
-          buttonsColor={COLOR_SCHEME.browserDarkerMinimize}
-        ></TerminalHeader>
+        <TerminalHeader title="skills"></TerminalHeader>
         {skills.map(({ skill, level }) => (
           <div
             key={skill}

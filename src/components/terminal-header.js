@@ -4,8 +4,8 @@ import { COLOR_SCHEME } from "./layout"
 
 const TerminalHeader = ({
   title,
-  backgroundColor = COLOR_SCHEME.gray,
-  buttonsColor = COLOR_SCHEME.browserMinimize,
+  backgroundColor = COLOR_SCHEME.mediumBlack,
+  buttonsColor = COLOR_SCHEME.browserDarkerMinimize,
 }) => {
   return (
     <div

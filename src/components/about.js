@@ -3,6 +3,7 @@ import { css } from "@emotion/core"
 import { COLOR_SCHEME } from "./layout"
 import { SectionHeaders } from "../pages/"
 import TerminalHeader from "./terminal-header"
+
 const About = () => {
   return (
     <Fragment>
