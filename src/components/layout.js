@@ -4,12 +4,14 @@ import { Global, css } from "@emotion/core"
 
 export const COLOR_SCHEME = {
   lightBlack: "#232528",
+  mediumBlack: "#333333",
   darkBlack: "#101112",
   codeGreen: "#47FF0C",
   gray: "#534B62",
   accent: "#47FF0C",
   browserClose: "#FF605C",
   browserMinimize: "#6A607D",
+  browserDarkerMinimize: "#4D4D4D",
   browserMaximize: "#FFBD44",
   tilde: "#01BAEF",
   arrow: "#F3C969",

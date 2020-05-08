@@ -1,6 +1,7 @@
 import React, { Fragment } from "react"
 import { css } from "@emotion/core"
 import { COLOR_SCHEME } from "./layout"
+import TerminalHeader from "./terminal-header"
 
 const skills = [
   {
@@ -50,6 +51,9 @@ const Skills = () => {
           background-color: ${COLOR_SCHEME.lightBlack};
           border-radius: 10px;
           padding: 1rem;
+          padding-top: 2rem;
+          position: relative;
+          overflow: hidden;
 
           -webkit-box-shadow: -12px 10px 26px 3px rgba(23, 25, 28, 1),
             -2px 2px 2px -2px rgba(23, 25, 28, 1);
@@ -64,6 +68,11 @@ const Skills = () => {
           }
         `}
       >
+        <TerminalHeader
+          title="skills"
+          backgroundColor={COLOR_SCHEME.mediumBlack}
+          buttonsColor={COLOR_SCHEME.browserDarkerMinimize}
+        ></TerminalHeader>
         {skills.map(({ skill, level }) => (
           <div
             key={skill}

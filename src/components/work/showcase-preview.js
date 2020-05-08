@@ -19,6 +19,11 @@ const ShowcasePreview = ({ item, isActive, onClick }) => {
         font-weight: 700;
         font-size: 1.25rem;
 
+        @media only screen and (min-width: 375px) {
+          width: 80px;
+          height: 80px;
+        }
+
         @media only screen and (min-width: 768px) {
           width: 100px;
           height: 100px;
