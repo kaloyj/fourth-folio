@@ -12,7 +12,7 @@ const Work = () => {
         flex-flow: row wrap;
 
         @media only screen and (min-width: 768px) {
-          margin-bottom: 7.5rem;
+          margin-bottom: 3rem;
         }
       `}
     >

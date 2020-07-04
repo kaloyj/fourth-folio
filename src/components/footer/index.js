@@ -40,8 +40,6 @@ const Footer = () => {
         display: flex;
         flex-flow: row wrap;
         position: relative;
-        background-color: ${COLOR_SCHEME.darkBlack};
-        margin-top: 14rem;
 
         @media only screen and (min-width: 768px) {
           min-height: 50vh;
@@ -49,7 +47,6 @@ const Footer = () => {
 
         @media only screen and (min-width: 1024px) {
           min-height: 45vh;
-          margin-top: 20rem;
         }
       `}
     >
@@ -58,13 +55,13 @@ const Footer = () => {
       <div
         css={css`
           flex: 0 0 100%;
-          height: 100%;
           display: flex;
           flex-flow: row wrap;
           align-content: flex-end;
           justify-content: center;
           color: white;
           padding-bottom: 1rem;
+          background-color: ${COLOR_SCHEME.darkBlack};
 
           @media only screen and (min-width: 375px) {
             padding-bottom: 1rem;
