@@ -36,39 +36,36 @@ const Footer = () => {
       id="contact"
       css={css`
         flex: 0 0 100%;
-        min-height: 72.5vh;
         display: flex;
         flex-flow: row wrap;
         position: relative;
+        background-color: ${COLOR_SCHEME.darkBlack};
+        align-items: center;
 
         @media only screen and (min-width: 768px) {
-          min-height: 50vh;
-        }
-
-        @media only screen and (min-width: 1024px) {
-          min-height: 45vh;
+          align-content: center;
+          justify-content: center;
         }
       `}
     >
-      <Contact></Contact>
-
+      <Contact />
       <div
         css={css`
           flex: 0 0 100%;
           display: flex;
           flex-flow: row wrap;
-          align-content: flex-end;
           justify-content: center;
           color: white;
-          padding-bottom: 1rem;
-          background-color: ${COLOR_SCHEME.darkBlack};
+          padding: 1rem 0;
 
           @media only screen and (min-width: 375px) {
             padding-bottom: 1rem;
           }
 
-          @media only screen and (min-width: 1024px) {
-            padding-bottom: 4rem;
+          @media only screen and (min-width: 768px) {
+            flex: 0 0 35%;
+            align-content: center;
+            height: 40%;
           }
         `}
       >
