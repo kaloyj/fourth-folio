@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import PropTypes from "prop-types"
 import { Global, css } from "@emotion/core"
 
@@ -8,18 +8,17 @@ export const COLOR_SCHEME = {
   darkBlack: "#101112",
   codeGreen: "#47FF0C",
   gray: "#534B62",
-  accent: "#47FF0C",
+  accent: "#F2FF49",
   browserClose: "#FF605C",
   browserMinimize: "#6A607D",
   browserDarkerMinimize: "#4D4D4D",
   browserMaximize: "#FFBD44",
   tilde: "#01BAEF",
   arrow: "#F3C969",
+  yellow: "#F2FF49",
 }
 
-const withoutScrollStyles = `overflow-y: hidden; height: 100vh;`
 const Layout = ({ children }) => {
-  const [avoidScroll, setAvoidScroll] = useState(false)
   return (
     <>
       {/* <Header siteTitle={title} /> */}
@@ -61,12 +60,10 @@ const Layout = ({ children }) => {
             display: flex;
             flex-flow: row wrap;
             align-content: flex-start;
-            ${avoidScroll ? withoutScrollStyles : ""}
+            background: ${COLOR_SCHEME.darkBlack};
           `}
         >
-          {children({
-            setAvoidScroll,
-          })}
+          {children}
         </main>
       </div>
     </>

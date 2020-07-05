@@ -57,7 +57,7 @@ const About = () => {
               color: ${COLOR_SCHEME.arrow};
             `}
           >
-            >
+            &gt;
           </span>
           Hi! My name's Carlo Janea, a frontend engineer with the heart of
           creating maintainable things to help people. I mainly focus on the JS

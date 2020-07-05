@@ -30,36 +30,34 @@ export const SectionHeaders = styled("h2")`
 const IndexPage = () => {
   return (
     <Layout>
-      {({ setAvoidScroll }) => (
-        <Fragment>
-          <SEO title="Home" />
-          <Hero setAvoidScroll={setAvoidScroll}></Hero>
-          <div
-            css={css`
-              flex: 0 0 100%;
-              display: flex;
-              flex-flow: row wrap;
+      <Fragment>
+        <SEO title="Home" />
+        <Hero></Hero>
+        <div
+          css={css`
+            flex: 0 0 100%;
+            display: flex;
+            flex-flow: row wrap;
 
-              @media only screen and (min-width: 1200px) {
-                flex: 0 0 80%;
-                margin-left: 10%;
-              }
+            @media only screen and (min-width: 1200px) {
+              flex: 0 0 80%;
+              margin-left: 10%;
+            }
 
-              @media only screen and (min-width: 1920px) {
-                flex: 0 0 60%;
-                margin-left: 20%;
-              }
-            `}
-          >
-            <About></About>
-            <Skills></Skills>
-            <Experience></Experience>
-            <Work></Work>
-          </div>
+            @media only screen and (min-width: 1920px) {
+              flex: 0 0 60%;
+              margin-left: 20%;
+            }
+          `}
+        >
+          <About></About>
+          <Skills></Skills>
+          <Experience></Experience>
+          <Work></Work>
+        </div>
 
-          <Footer></Footer>
-        </Fragment>
-      )}
+        <Footer></Footer>
+      </Fragment>
     </Layout>
   )
 }
