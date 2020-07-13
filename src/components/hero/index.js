@@ -73,7 +73,12 @@ const Hero = () => {
           Carlo Janea
         </h1>
         <HeroSubText>Frontend Engineer</HeroSubText>
-        <HeroSubText>Cebu, PHL</HeroSubText>
+        <HeroSubText>
+          Cebu, PHL{" "}
+          <span role="img" aria-label="Philippine flag">
+            🇵🇭
+          </span>
+        </HeroSubText>
       </div>
 
       <Feature></Feature>
