@@ -20,7 +20,6 @@ export const COLOR_SCHEME = {
 const Layout = ({ children }) => {
   return (
     <>
-      {/* <Header siteTitle={title} /> */}
       <Global
         styles={css`
           * {
@@ -70,7 +69,7 @@ const Layout = ({ children }) => {
 }
 
 Layout.propTypes = {
-  children: PropTypes.func.isRequired,
+  children: PropTypes.object.isRequired,
 }
 
 export default Layout

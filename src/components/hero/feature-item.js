@@ -34,7 +34,7 @@ const FeatureItem = ({ feature: { label, href, external } }) => {
       target={external ? "_blank" : "_self"}
       css={css`
         flex: 0 0 40%;
-        margin: 0 4% 8% 4%;
+        margin: 0 5% 8% 5%;
         position: relative;
         height: 100px;
         display: flex;
@@ -42,11 +42,13 @@ const FeatureItem = ({ feature: { label, href, external } }) => {
 
         @media only screen and (min-width: 375px) {
           height: 140px;
+          margin: 0 5% 12% 5%;
         }
 
         @media only screen and (min-width: 768px) {
           flex: 0 0 24%;
           height: 150px;
+          margin: 0 4% 8% 4%;
         }
 
         @media only screen and (min-width: 1024px) {
@@ -92,6 +94,7 @@ const FeatureItem = ({ feature: { label, href, external } }) => {
             margin: 8%;
             font-size: 1rem;
             transition: color 0.25s ease;
+            word-break: break-word;
           `}
         >
           {label}

@@ -124,9 +124,9 @@ const ExperienceItem = ({
             }
           `}
         >
-          {listItems.map(item => (
+          {listItems.map((item, index) => (
             <li
-              key={item}
+              key={index}
               css={css`
                 margin-bottom: 0.5rem;
                 flex: 0 0 100%;

@@ -38,11 +38,12 @@ const Feature = () => {
         margin-top: 2rem;
 
         @media only screen and (min-width: 375px) {
-          margin-top: 4rem;
+          margin-top: 2rem;
         }
 
         @media only screen and (min-width: 768px) {
           flex: 0 0 80%;
+          margin-top: 4rem;
           margin-left: 10%;
         }
       `}

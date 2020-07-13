@@ -27,11 +27,16 @@ const Hero = () => {
         width: 100vw;
         display: flex;
         flex-flow: row wrap;
-        align-content: center;
+        align-content: flex-start;
         background: ${COLOR_SCHEME.darkBlack};
         padding-top: 0.5rem;
+
         @media only screen and (min-width: 375px) {
-          padding-top: 2rem;
+          padding-top: 1rem;
+        }
+
+        @media only screen and (min-width: 768px) {
+          align-content: center;
         }
       `}
     >
