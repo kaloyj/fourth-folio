@@ -27,7 +27,37 @@ const BoxOverlay = styled("div")`
   z-index: 3;
 `
 
-const FeatureItem = ({ feature: { label, href, external } }) => {
+const IconContainer = styled("span")`
+  border: 2px solid ${COLOR_SCHEME.accent};
+  position: absolute;
+  top: 8%;
+  left: 8%;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.4;
+  transition: opacity 0.25s ease;
+
+  path {
+    transition: stroke 0.25s ease;
+  }
+
+  @media only screen and (min-width: 375px) {
+    height: 50px;
+    width: 50px;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    top: 6%;
+    left: 4%;
+  }
+`
+
+const FeatureItem = ({ feature: { label, href, external, icon } }) => {
   return (
     <a
       href={href}
@@ -58,6 +88,7 @@ const FeatureItem = ({ feature: { label, href, external } }) => {
 
         &:hover {
           .BoxOverlayOffset,
+          .FeatureItemIcon,
           .MainBoxBorder {
             opacity: 1;
           }
@@ -66,6 +97,13 @@ const FeatureItem = ({ feature: { label, href, external } }) => {
             background: ${COLOR_SCHEME.accent};
             h3 {
               color: ${COLOR_SCHEME.darkBlack};
+            }
+          }
+
+          .FeatureItemIcon {
+            border: 3px solid ${COLOR_SCHEME.darkBlack};
+            path {
+              stroke: ${COLOR_SCHEME.darkBlack};
             }
           }
         }
@@ -85,8 +123,11 @@ const FeatureItem = ({ feature: { label, href, external } }) => {
           flex-flow: row wrap;
           align-content: flex-end;
           transition: background 0.25s ease;
+          position: relative;
         `}
       >
+        <IconContainer className="FeatureItemIcon">{icon}</IconContainer>
+
         <h3
           css={css`
             text-align: right;
@@ -95,6 +136,10 @@ const FeatureItem = ({ feature: { label, href, external } }) => {
             font-size: 1rem;
             transition: color 0.25s ease;
             word-break: break-word;
+
+            @media only screen and (min-width: 1024px) {
+              font-size: 1.4rem;
+            }
           `}
         >
           {label}
