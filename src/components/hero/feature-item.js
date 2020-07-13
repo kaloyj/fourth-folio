@@ -121,7 +121,6 @@ const FeatureItem = ({ feature: { label, href, external, icon } }) => {
           z-index: 2;
           display: flex;
           flex-flow: row wrap;
-          align-content: flex-end;
           transition: background 0.25s ease;
           position: relative;
         `}
@@ -130,19 +129,17 @@ const FeatureItem = ({ feature: { label, href, external, icon } }) => {
 
         <h3
           css={css`
-            flex: 1;
             font-size: 1rem;
             transition: color 0.25s ease;
-            word-break: break-word;
-            display: flex;
-            flex-flow: row wrap;
-            justify-content: flex-end;
-            margin: 8%;
             text-align: right;
+            position: absolute;
+            word-break: break-word;
+            width: 84%;
+            bottom: 8%;
+            right: 8%;
 
             @media only screen and (min-width: 1024px) {
               font-size: 1.4rem;
-              margin: 6% 8%;
             }
           `}
         >
