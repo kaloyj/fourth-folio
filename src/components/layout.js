@@ -3,7 +3,6 @@ import PropTypes from "prop-types"
 import { Global, css } from "@emotion/core"
 
 export const COLOR_SCHEME = {
-  lightBlack: "#232528",
   mediumBlack: "#333333",
   darkBlack: "#101112",
   codeGreen: "#47FF0C",
@@ -36,7 +35,7 @@ const Layout = ({ children }) => {
               Roboto, Helvetica, Arial, sans-serif;
             font-size: 18px;
             line-height: 1.4;
-            background-color: ${COLOR_SCHEME.lightBlack};
+            background-color: ${COLOR_SCHEME.darkBlack};
           }
 
           h1,

@@ -22,13 +22,7 @@ const ShowcaseDetails = ({ selected }) => {
         display: flex;
         flex-flow: row wrap;
         align-content: flex-start;
-
-        -webkit-box-shadow: -12px 10px 26px 3px rgba(16, 17, 18, 1),
-          -2px 2px 2px -2px rgba(16, 17, 18, 1);
-        -moz-box-shadow: -12px 10px 26px 3px rgba(16, 17, 18, 1),
-          -2px 2px 2px -2px rgba(16, 17, 18, 1);
-        box-shadow: -12px 10px 26px -5px rgba(16, 17, 18, 1),
-          -2px 2px 2px -2px rgba(16, 17, 18, 1);
+        border: 1px solid ${COLOR_SCHEME.accent};
 
         @media only screen and (min-width: 768px) {
           margin: 0 0 0 4%;
@@ -59,6 +53,18 @@ const ShowcaseDetails = ({ selected }) => {
           }
         `}
       >
+        <div
+          css={css`
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+            background-color: ${COLOR_SCHEME.darkBlack};
+          `}
+        ></div>
+
         {photo ? (
           <Img
             fluid={photo.fluid}
@@ -69,25 +75,14 @@ const ShowcaseDetails = ({ selected }) => {
             `}
           ></Img>
         ) : (
-          <Placeholder width="32" height="32"></Placeholder>
+          <Placeholder
+            width="32"
+            height="32"
+            css={css`
+              z-index: 5;
+            `}
+          ></Placeholder>
         )}
-
-        <div
-          css={css`
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-
-            background: rgb(2, 0, 36);
-            background: linear-gradient(
-              180deg,
-              rgba(2, 0, 36, 0) 0%,
-              rgba(35, 37, 40, 1) 100%
-            );
-          `}
-        ></div>
       </div>
 
       <div

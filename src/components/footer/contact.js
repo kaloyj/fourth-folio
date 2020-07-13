@@ -112,10 +112,10 @@ const Contact = () => {
         css={css`
           font-size: 0.9rem;
           font-family: Source Code Pro;
-          border: none;
+          border: 1px solid white;
           padding: 5%;
           color: white;
-          background-color: ${COLOR_SCHEME.lightBlack};
+          background-color: ${COLOR_SCHEME.darkBlack};
 
           @media only screen and (min-width: 768px) {
             font-size: 1.15rem;

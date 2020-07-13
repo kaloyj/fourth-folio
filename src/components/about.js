@@ -16,18 +16,12 @@ const About = () => {
           display: flex;
           flex-flow: row wrap;
           background-color: ${COLOR_SCHEME.darkBlack};
+          border: 1px solid ${COLOR_SCHEME.accent};
           border-radius: 10px;
           padding: 1rem;
           padding-top: 1.75rem;
           position: relative;
           overflow: hidden;
-
-          -webkit-box-shadow: -12px 10px 26px 3px rgba(16, 17, 18, 1),
-            -2px 2px 2px -2px rgba(16, 17, 18, 1);
-          -moz-box-shadow: -12px 10px 26px 3px rgba(16, 17, 18, 1),
-            -2px 2px 2px -2px rgba(16, 17, 18, 1);
-          box-shadow: -12px 10px 26px -5px rgba(16, 17, 18, 1),
-            -2px 2px 2px -2px rgba(16, 17, 18, 1);
 
           @media only screen and (min-width: 768px) {
             flex: 0 0 34%;

@@ -8,7 +8,8 @@ const ShowcasePreview = ({ item, isActive, onClick }) => {
       aria-label={`Project: ${item.title}`}
       css={css`
         width: 70px;
-        border: 3px solid ${isActive ? COLOR_SCHEME.accent : "transparent"};
+        border: 3px solid ${COLOR_SCHEME.accent};
+        opacity: ${isActive ? 1 : 0.4};
         height: 70px;
         border-radius: 10px;
         background-color: ${COLOR_SCHEME.darkBlack};
@@ -18,6 +19,7 @@ const ShowcasePreview = ({ item, isActive, onClick }) => {
         color: white;
         font-weight: 700;
         font-size: 1.25rem;
+        transition: opacity 0.25s ease;
 
         @media only screen and (min-width: 375px) {
           width: 80px;

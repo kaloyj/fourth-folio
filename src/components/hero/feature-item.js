@@ -8,22 +8,22 @@ const BoxOverlayOffset = styled("div")`
   top: 0;
   left: 0;
   transform: translate(10%, -10%);
-  border: 2px solid ${COLOR_SCHEME.yellow};
+  border: 2px solid ${COLOR_SCHEME.accent};
   opacity: 0.4;
   height: 100%;
   width: 100%;
-  transition: opacity: 0.25s ease;
+  transition: opacity 0.25s ease;
 `
 
 const BoxOverlay = styled("div")`
   position: absolute;
   top: 0;
   left: 0;
-  border: 2px solid ${COLOR_SCHEME.yellow};
+  border: 2px solid ${COLOR_SCHEME.accent};
   opacity: 0.4;
   height: 100%;
   width: 100%;
-  transition: opacity: 0.25s ease;
+  transition: opacity 0.25s ease;
   z-index: 3;
 `
 

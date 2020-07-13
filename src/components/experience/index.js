@@ -9,7 +9,10 @@ const EXPERIENCES = [
     yearEnd: "2015",
     title: "High School",
     listTitle: "St. Joseph's Academy",
-    listItems: ["Consistent Honor Student", "Graduated 2nd Honorable Mention"],
+    listItems: [
+      <span>Consistent Honor Student</span>,
+      <span>Graduated 2nd Honorable Mention</span>,
+    ],
   },
   {
     yearStart: "2015",
@@ -17,10 +20,10 @@ const EXPERIENCES = [
     title: "Computer Science Degree",
     listTitle: "University of San Carlos",
     listItems: [
-      "Magna Cum Laude",
-      "Consistent Dean's Lister",
-      "Top 4 DS Lister Data Structures",
-      "Graduated with 1.25 GWA",
+      <span className="highlight-1">Magna Cum Laude</span>,
+      <span>Consistent Dean's Lister</span>,
+      <span>Top 4 DS Lister Data Structures</span>,
+      <span>Graduated with 1.25 GWA</span>,
     ],
   },
   {
@@ -29,8 +32,15 @@ const EXPERIENCES = [
     title: "Coding Avenue (Hireplicity)",
     listTitle: "Software Developer Intern",
     listItems: [
-      "learned software development first-hand with industry experienced mentors",
-      "maintained and worked on a learning platform built on PHP + React",
+      <span>
+        learned software development first-hand with industry experienced
+        mentors
+      </span>,
+      <span>
+        maintained and worked on a{" "}
+        <span className="highlight-1">learning platform</span> built on PHP +
+        React"
+      </span>,
     ],
   },
   {
@@ -39,9 +49,20 @@ const EXPERIENCES = [
     title: "Full Scale",
     listTitle: "Frontend Developer",
     listItems: [
-      "maintained an employee database application with Vue",
-      "maintained and developed a virtual summit application with React + Rails",
-      "created a page builder application with React + Hooks",
+      <span>
+        maintained an{" "}
+        <span className="highlight-1">employee database application</span> with
+        Vue
+      </span>,
+      <span>
+        maintained and developed a{" "}
+        <span className="highlight-1">virtual summit application</span> with
+        React + Rails
+      </span>,
+      <span>
+        created a <span className="highlight-1">page builder application</span>{" "}
+        with React + Hooks
+      </span>,
     ],
   },
   {
@@ -50,8 +71,12 @@ const EXPERIENCES = [
     title: "Caresharing, Inc.",
     listTitle: "React Frontend Engineer",
     listItems: [
-      "maintained and developed a healthcare application used in multiple countries",
-      "used Apollo GraphQL, React hooks, and Rails",
+      <span>
+        maintained and developed a{" "}
+        <span className="highlight-1">healthcare application</span> used in
+        multiple countries
+      </span>,
+      <span>used Apollo GraphQL, React hooks, and Rails</span>,
     ],
   },
 ].reverse()

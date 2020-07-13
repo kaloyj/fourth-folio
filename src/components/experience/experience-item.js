@@ -16,6 +16,7 @@ const ExperienceItem = ({
         flex-flow: row wrap;
         justify-content: space-between;
         position: relative;
+        align-items: flex-start;
 
         @media only screen and (min-width: 768px) {
           span,
@@ -32,8 +33,8 @@ const ExperienceItem = ({
           border-radius: 50%;
           border: 3px solid white;
           position: absolute;
-          background-color: ${COLOR_SCHEME.lightBlack};
-          top: 0;
+          background-color: ${COLOR_SCHEME.darkBlack};
+          top: 4%;
           left: 40%;
           z-index: 2;
           transform: translate(-50%, -15%);
@@ -67,6 +68,13 @@ const ExperienceItem = ({
           flex: 0 0 30%;
           display: flex;
           flex-flow: row wrap;
+          border: 1px solid ${COLOR_SCHEME.accent};
+          word-break: break-word;
+          padding: 2% 3%;
+
+          @media only screen and (min-width: 768px) {
+            padding: 1% 2%;
+          }
         `}
       >
         {title}
@@ -76,6 +84,12 @@ const ExperienceItem = ({
           flex: 0 0 50%;
           display: flex;
           flex-flow: row wrap;
+          border: 1px solid ${COLOR_SCHEME.accent};
+          padding: 4%;
+
+          @media only screen and (min-width: 768px) {
+            padding: 2%;
+          }
         `}
       >
         <h4
@@ -97,20 +111,34 @@ const ExperienceItem = ({
         >
           {yearStart} - {yearEnd}
         </span>
-        {listItems.map(item => (
-          <div
-            key={item}
-            css={css`
-              margin-bottom: 0.5rem;
-              flex: 0 0 100%;
-              @media only screen and (min-width: 768px) {
-                margin-bottom: 1rem;
-              }
-            `}
-          >
-            {item}
-          </div>
-        ))}
+        <ul
+          css={css`
+            flex: 0 0 100%;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            flex-flow: row wrap;
+
+            .highlight-1 {
+              color: ${COLOR_SCHEME.accent};
+            }
+          `}
+        >
+          {listItems.map(item => (
+            <li
+              key={item}
+              css={css`
+                margin-bottom: 0.5rem;
+                flex: 0 0 100%;
+                @media only screen and (min-width: 768px) {
+                  margin-bottom: 1rem;
+                }
+              `}
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
       </span>
     </div>
   )
