@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useMemo } from "react"
 import { css } from "@emotion/core"
 import styled from "@emotion/styled"
 import { COLOR_SCHEME } from "../layout"
@@ -7,12 +7,12 @@ const BoxOverlayOffset = styled("div")`
   position: absolute;
   top: 0;
   left: 0;
-  transform: translate(10%, -10%);
+  transform: ${props => `translate(${props.translateX}%, -10%)`};
   border: 2px solid ${COLOR_SCHEME.accent};
   opacity: 0.4;
   height: 100%;
   width: 100%;
-  transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease, transform 0.4s;
 `
 
 const BoxOverlay = styled("div")`
@@ -56,8 +56,39 @@ const IconContainer = styled("span")`
     left: 4%;
   }
 `
+const DEFAULT_X_OFFSET = 10
 
-const FeatureItem = ({ feature: { label, href, external, icon } }) => {
+// we default to 1 because 0 cannot be used in dividing
+const TOTAL_WINDOW_WIDTH = typeof window === "undefined" ? 1 : window.innerWidth
+
+function calculateExtremes(location) {
+  switch (location) {
+    case 2:
+      return -DEFAULT_X_OFFSET
+    case 1:
+      return 0
+    case 0:
+    default:
+      return DEFAULT_X_OFFSET
+  }
+}
+
+const FeatureItem = ({
+  feature: { label, href, external, icon },
+  index,
+  xPos,
+  hoveredIndex,
+  setHoveredIndex,
+}) => {
+  const translatedXLocation = useMemo(() => {
+    if (!xPos) return DEFAULT_X_OFFSET
+
+    if (typeof hoveredIndex === "number")
+      return calculateExtremes(hoveredIndex % 3)
+
+    const score = 1 - xPos / (TOTAL_WINDOW_WIDTH / 2)
+    return score * DEFAULT_X_OFFSET
+  }, [xPos, hoveredIndex])
   return (
     <a
       href={href}
@@ -108,8 +139,13 @@ const FeatureItem = ({ feature: { label, href, external, icon } }) => {
           }
         }
       `}
+      onMouseEnter={() => setHoveredIndex(index)}
+      onMouseLeave={() => setHoveredIndex(null)}
     >
-      <BoxOverlayOffset className="BoxOverlayOffset"></BoxOverlayOffset>
+      <BoxOverlayOffset
+        className="BoxOverlayOffset"
+        translateX={translatedXLocation}
+      ></BoxOverlayOffset>
       <BoxOverlay className="MainBoxBorder"></BoxOverlay>
 
       <div

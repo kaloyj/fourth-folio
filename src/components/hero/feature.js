@@ -1,7 +1,8 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { css } from "@emotion/core"
 import FeatureItem from "./feature-item"
 import { COLOR_SCHEME } from "../layout"
+import { isMobile } from "../../utils/device"
 
 const FEATURE_ITEMS = [
   {
@@ -119,7 +120,34 @@ const FEATURE_ITEMS = [
   },
 ]
 
+let REFRESH_RATE = 10
+
+// adjust index if odd for hover animation
+// to be on the extremes if last element
+function getAdjustedIndex(index, total) {
+  if (total % 3 === 0) return index
+  else return index === total - 1 ? index + 1 : index
+}
+
 const Feature = () => {
+  const [xPos, setXPos] = useState(null)
+  const [hoveredIndex, setHoveredIndex] = useState(null)
+
+  useEffect(() => {
+    // make sure to deactivate this on mobile devices!
+    let ctr = 0
+    function updateXPosition(e) {
+      if (ctr % REFRESH_RATE === 0) setXPos(e.clientX)
+      ctr++
+    }
+
+    if (!isMobile) window.addEventListener("mousemove", updateXPosition)
+
+    return () => {
+      if (!isMobile) window.removeEventListener("mousemove", updateXPosition)
+    }
+  }, [])
+
   return (
     <div
       css={css`
@@ -137,14 +165,19 @@ const Feature = () => {
         @media only screen and (min-width: 768px) {
           flex: 0 0 80%;
           margin-top: 4rem;
-          margin-left: 10%;
         }
       `}
     >
-      {FEATURE_ITEMS.map(feature => (
-        <FeatureItem key={feature.label} feature={feature}>
-          i am feature
-        </FeatureItem>
+      {FEATURE_ITEMS.map((feature, index) => (
+        <FeatureItem
+          key={feature.label}
+          index={getAdjustedIndex(index, FEATURE_ITEMS.length)}
+          feature={feature}
+          xPos={xPos}
+          setXPos={setXPos}
+          hoveredIndex={hoveredIndex}
+          setHoveredIndex={setHoveredIndex}
+        ></FeatureItem>
       ))}
     </div>
   )
