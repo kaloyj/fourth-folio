@@ -134,7 +134,6 @@ const Feature = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null)
 
   useEffect(() => {
-    // make sure to deactivate this on mobile devices!
     let ctr = 0
     function updateXPosition(e) {
       if (ctr % REFRESH_RATE === 0) setXPos(e.clientX)
@@ -159,11 +158,12 @@ const Feature = () => {
         margin-top: 2rem;
 
         @media only screen and (min-width: 375px) {
-          margin-top: 2rem;
+          margin-top: 3.75rem;
         }
 
         @media only screen and (min-width: 768px) {
           flex: 0 0 80%;
+          margin-left: 10%;
           margin-top: 4rem;
         }
       `}

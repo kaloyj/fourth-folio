@@ -47,10 +47,12 @@ const Hero = () => {
           display: flex;
           flex-flow: row wrap;
           justify-content: center;
+          margin-top: 0.5rem;
 
           @media only screen and (min-width: 1200px) {
             flex: 0 0 80%;
             margin-left: 10%;
+            margin-top: 1rem;
           }
         `}
       >
