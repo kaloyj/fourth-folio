@@ -50,8 +50,19 @@ const IndexPage = () => {
             }
           `}
         >
-          <About></About>
-          <Skills></Skills>
+          <div
+            css={css`
+              flex: 0 0 100%;
+              display: flex;
+              flex-flow: row wrap;
+              perspective: 500px;
+            `}
+            role="list"
+          >
+            <About></About>
+            <Skills></Skills>
+          </div>
+
           <Experience></Experience>
           <Work></Work>
         </div>

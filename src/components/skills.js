@@ -2,6 +2,7 @@ import React, { Fragment } from "react"
 import { css } from "@emotion/core"
 import { COLOR_SCHEME } from "./layout"
 import TerminalHeader from "./terminal-header"
+import { isMobile } from "../utils/device"
 
 const skills = [
   {
@@ -49,18 +50,34 @@ const Skills = () => {
           display: flex;
           flex-flow: row wrap;
           background-color: ${COLOR_SCHEME.darkBlack};
-          border: 1px solid ${COLOR_SCHEME.accent};
           border-radius: 10px;
           padding: 1rem;
           padding-top: 2rem;
           position: relative;
           overflow: hidden;
+          -webkit-box-shadow: 4px 0px 62px -28px rgba(242, 255, 73, 0.35),
+            2px 0px 10px -2px rgba(242, 255, 73, 0.35);
+          -moz-box-shadow: 4px 0px 62px -28px rgba(242, 255, 73, 0.35),
+            2px 0px 10px -2px rgba(242, 255, 73, 0.35);
+          box-shadow: 4px 0px 62px -28px rgba(242, 255, 73, 0.35),
+            2px 0px 10px -2px rgba(242, 255, 73, 0.35);
+
+          ${!isMobile &&
+            `transform: translateX(-10%) scale(0.75) rotateY(-10deg);
+          transition: transform 0.5s ease;
+          cursor: pointer;
+
+          &:focus {
+            transform: translateX(0) scale(1) rotateY(0);
+          }`}
 
           @media only screen and (min-width: 768px) {
             flex: 0 0 54%;
             margin: 1rem 0 1rem 4%;
           }
         `}
+        tabIndex={isMobile ? null : 0}
+        role="button"
       >
         <TerminalHeader title="skills"></TerminalHeader>
         {skills.map(({ skill, level }) => (
