@@ -1,6 +1,6 @@
 import React from "react"
 import { css } from "@emotion/core"
-import { COLOR_SCHEME } from "./layout"
+import { COLOR_SCHEME } from "../layout"
 
 const TerminalHeader = ({
   title,

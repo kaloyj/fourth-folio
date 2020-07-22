@@ -5,7 +5,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import Hero from "../components/hero"
 import About from "../components/about"
-import Skills from "../components/skills"
 import Experience from "../components/experience"
 import Footer from "../components/footer"
 import Work from "../components/work"
@@ -50,19 +49,7 @@ const IndexPage = () => {
             }
           `}
         >
-          <div
-            css={css`
-              flex: 0 0 100%;
-              display: flex;
-              flex-flow: row wrap;
-              perspective: 500px;
-            `}
-            role="list"
-          >
-            <About></About>
-            <Skills></Skills>
-          </div>
-
+          <About></About>
           <Experience></Experience>
           <Work></Work>
         </div>

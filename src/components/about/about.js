@@ -1,11 +1,12 @@
-import React, { Fragment } from "react"
+import React, { Fragment, useCallback } from "react"
 import { css } from "@emotion/core"
-import { COLOR_SCHEME } from "./layout"
-import { SectionHeaders } from "../pages/"
+import { COLOR_SCHEME } from "../layout"
+import { SectionHeaders } from "../../pages"
 import TerminalHeader from "./terminal-header"
-import { isMobile } from "../utils/device"
+import { isMobile } from "../../utils/device"
 
-const About = () => {
+const About = ({ type, onSelect, isSelected }) => {
+  const handleSelect = useCallback(() => onSelect(type), [onSelect, type])
   return (
     <Fragment>
       <SectionHeaders id="about-me">Who?</SectionHeaders>
@@ -30,13 +31,16 @@ const About = () => {
             2px 0px 10px -2px rgba(242, 255, 73, 0.35);
 
           ${!isMobile &&
-            `transform: translateX(10%) scale(0.75) rotateY(10deg);
-          transition: transform 0.5s ease;
-          cursor: pointer;
+            `transform: translateX(10%) scale(0.6) rotateY(10deg);
+             transition: transform 0.5s ease;
+             cursor: pointer;
+          `}
 
-          &:focus {
+          ${!isMobile &&
+            isSelected &&
+            `
             transform: translateX(0) scale(1) rotateY(0);
-          }`}
+          `}
 
           @media only screen and (min-width: 768px) {
             flex: 0 0 34%;
@@ -45,6 +49,8 @@ const About = () => {
         `}
         tabIndex={isMobile ? null : 0}
         role="button"
+        onClick={handleSelect}
+        onKeyDown={handleSelect}
       >
         <TerminalHeader title="about-me"></TerminalHeader>
         <p

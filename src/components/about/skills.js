@@ -1,8 +1,8 @@
-import React, { Fragment } from "react"
+import React, { Fragment, useCallback } from "react"
 import { css } from "@emotion/core"
-import { COLOR_SCHEME } from "./layout"
+import { COLOR_SCHEME } from "../layout"
 import TerminalHeader from "./terminal-header"
-import { isMobile } from "../utils/device"
+import { isMobile } from "../../utils/device"
 
 const skills = [
   {
@@ -39,7 +39,8 @@ const skills = [
   },
 ]
 
-const Skills = () => {
+const Skills = ({ type, onSelect, isSelected }) => {
+  const handleSelect = useCallback(() => onSelect(type), [onSelect, type])
   return (
     <Fragment>
       <div
@@ -63,13 +64,15 @@ const Skills = () => {
             2px 0px 10px -2px rgba(242, 255, 73, 0.35);
 
           ${!isMobile &&
-            `transform: translateX(-10%) scale(0.75) rotateY(-10deg);
-          transition: transform 0.5s ease;
-          cursor: pointer;
+            `transform: translateX(-10%) scale(0.6) rotateY(-10deg);
+             transition: transform 0.5s ease;
+             cursor: pointer;
+          `}
 
-          &:focus {
-            transform: translateX(0) scale(1) rotateY(0);
-          }`}
+          ${!isMobile &&
+            isSelected &&
+            `transform: translateX(0) scale(1) rotateY(0);
+          `}
 
           @media only screen and (min-width: 768px) {
             flex: 0 0 54%;
@@ -78,6 +81,8 @@ const Skills = () => {
         `}
         tabIndex={isMobile ? null : 0}
         role="button"
+        onClick={handleSelect}
+        onKeyDown={handleSelect}
       >
         <TerminalHeader title="skills"></TerminalHeader>
         {skills.map(({ skill, level }) => (
