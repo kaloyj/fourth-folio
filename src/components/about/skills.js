@@ -75,8 +75,8 @@ const Skills = ({ type, onSelect, isSelected }) => {
           `}
 
           @media only screen and (min-width: 768px) {
-            flex: 0 0 54%;
-            margin: 1rem 0 1rem 4%;
+            flex: 0 0 52%;
+            margin: 1rem 4% 1rem 4%;
           }
         `}
         tabIndex={isMobile ? null : 0}

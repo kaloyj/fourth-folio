@@ -1,7 +1,6 @@
 import React, { Fragment, useCallback } from "react"
 import { css } from "@emotion/core"
 import { COLOR_SCHEME } from "../layout"
-import { SectionHeaders } from "../../pages"
 import TerminalHeader from "./terminal-header"
 import { isMobile } from "../../utils/device"
 
@@ -9,12 +8,11 @@ const About = ({ type, onSelect, isSelected }) => {
   const handleSelect = useCallback(() => onSelect(type), [onSelect, type])
   return (
     <Fragment>
-      <SectionHeaders id="about-me">Who?</SectionHeaders>
       <div
         css={css`
           min-height: 50vh;
           flex: 0 0 88%;
-          margin: 1rem 6% 1rem;
+          margin: 1rem 6% 2rem;
           display: flex;
           flex-flow: row wrap;
           background-color: ${COLOR_SCHEME.darkBlack};
@@ -39,11 +37,11 @@ const About = ({ type, onSelect, isSelected }) => {
           ${!isMobile &&
             isSelected &&
             `
-            transform: translateX(0) scale(1) rotateY(0);
+            transform: translateX(10%) scale(1) rotateY(0);
           `}
 
           @media only screen and (min-width: 768px) {
-            flex: 0 0 34%;
+            flex: 0 0 36%;
             margin: 1rem 0 1rem 4%;
           }
         `}

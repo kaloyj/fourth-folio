@@ -16,7 +16,7 @@ export const SectionHeaders = styled("h2")`
   text-align: center;
 
   @media only screen and (min-width: 768px) {
-    text-align: left;
+    text-align: ${props => (props.isCentered ? "center" : "left")};
     margin-left: 4%;
     font-size: 2rem;
   }
