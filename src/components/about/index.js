@@ -3,10 +3,17 @@ import { css } from "@emotion/core"
 import About from "./about"
 import Skills from "./skills"
 import { SectionHeaders } from "../../pages"
+import { isMobile } from "../../utils/device"
 
 export const ABOUT_ITEMS = {
   about: "about",
   skills: "skills",
+}
+
+const getClassName = isSelected => {
+  if (isMobile()) return "selected"
+
+  return isSelected ? "selected" : "not-selected"
 }
 
 const AboutContainer = () => {
@@ -44,12 +51,12 @@ const AboutContainer = () => {
         <About
           type={ABOUT_ITEMS.about}
           onSelect={handleItemSelect}
-          isSelected={selected === ABOUT_ITEMS.about}
+          className={getClassName(selected === ABOUT_ITEMS.about)}
         ></About>
         <Skills
           type={ABOUT_ITEMS.skills}
           onSelect={handleItemSelect}
-          isSelected={selected === ABOUT_ITEMS.skills}
+          className={getClassName(selected === ABOUT_ITEMS.skills)}
         ></Skills>
       </div>
     </div>

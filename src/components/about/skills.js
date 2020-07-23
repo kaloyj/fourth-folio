@@ -39,11 +39,12 @@ const skills = [
   },
 ]
 
-const Skills = ({ type, onSelect, isSelected }) => {
+const Skills = ({ type, onSelect, className }) => {
   const handleSelect = useCallback(() => onSelect(type), [onSelect, type])
   return (
     <Fragment>
       <div
+        className={className}
         css={css`
           min-height: 50vh;
           flex: 0 0 88%;
@@ -56,6 +57,8 @@ const Skills = ({ type, onSelect, isSelected }) => {
           padding-top: 2rem;
           position: relative;
           overflow: hidden;
+          transition: transform 0.5s ease;
+          cursor: pointer;
           -webkit-box-shadow: 4px 0px 62px -28px rgba(242, 255, 73, 0.35),
             2px 0px 10px -2px rgba(242, 255, 73, 0.35);
           -moz-box-shadow: 4px 0px 62px -28px rgba(242, 255, 73, 0.35),
@@ -63,23 +66,20 @@ const Skills = ({ type, onSelect, isSelected }) => {
           box-shadow: 4px 0px 62px -28px rgba(242, 255, 73, 0.35),
             2px 0px 10px -2px rgba(242, 255, 73, 0.35);
 
-          ${!isMobile &&
-            `transform: translateX(-10%) scale(0.6) rotateY(-10deg);
-             transition: transform 0.5s ease;
-             cursor: pointer;
-          `}
-
-          ${!isMobile &&
-            isSelected &&
-            `transform: translateX(0) scale(1) rotateY(0);
-          `}
-
           @media only screen and (min-width: 768px) {
             flex: 0 0 52%;
             margin: 1rem 4% 1rem 4%;
+
+            &.not-selected {
+              transform: translateX(-10%) scale(0.6) rotateY(-10deg);
+            }
+
+            &.selected {
+              transform: translateX(-5%) scale(1) rotateY(0);
+            }
           }
         `}
-        tabIndex={isMobile ? null : 0}
+        tabIndex={isMobile() ? null : 0}
         role="button"
         onClick={handleSelect}
         onKeyDown={handleSelect}

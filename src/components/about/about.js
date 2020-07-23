@@ -4,11 +4,12 @@ import { COLOR_SCHEME } from "../layout"
 import TerminalHeader from "./terminal-header"
 import { isMobile } from "../../utils/device"
 
-const About = ({ type, onSelect, isSelected }) => {
+const About = ({ type, onSelect, className }) => {
   const handleSelect = useCallback(() => onSelect(type), [onSelect, type])
   return (
     <Fragment>
       <div
+        className={className}
         css={css`
           min-height: 50vh;
           flex: 0 0 88%;
@@ -21,6 +22,8 @@ const About = ({ type, onSelect, isSelected }) => {
           padding-top: 1.75rem;
           position: relative;
           overflow: hidden;
+          transition: transform 0.5s ease;
+          cursor: pointer;
           -webkit-box-shadow: 4px 0px 62px -28px rgba(242, 255, 73, 0.35),
             2px 0px 10px -2px rgba(242, 255, 73, 0.35);
           -moz-box-shadow: 4px 0px 62px -28px rgba(242, 255, 73, 0.35),
@@ -28,24 +31,20 @@ const About = ({ type, onSelect, isSelected }) => {
           box-shadow: 4px 0px 62px -28px rgba(242, 255, 73, 0.35),
             2px 0px 10px -2px rgba(242, 255, 73, 0.35);
 
-          ${!isMobile &&
-            `transform: translateX(10%) scale(0.6) rotateY(10deg);
-             transition: transform 0.5s ease;
-             cursor: pointer;
-          `}
-
-          ${!isMobile &&
-            isSelected &&
-            `
-            transform: translateX(10%) scale(1) rotateY(0);
-          `}
-
           @media only screen and (min-width: 768px) {
             flex: 0 0 36%;
             margin: 1rem 0 1rem 4%;
+
+            &.not-selected {
+              transform: translateX(10%) scale(0.6) rotateY(10deg);
+            }
+
+            &.selected {
+              transform: translateX(10%) scale(1) rotateY(0);
+            }
           }
         `}
-        tabIndex={isMobile ? null : 0}
+        tabIndex={isMobile() ? null : 0}
         role="button"
         onClick={handleSelect}
         onKeyDown={handleSelect}

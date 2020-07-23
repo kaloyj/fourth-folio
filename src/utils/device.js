@@ -1,4 +1,4 @@
-export const isMobile =
-  typeof navigator === "undefined"
-    ? true
-    : /iPhone|iPad|iPod|Android/i.test(navigator.userAgent)
+export const isMobile = () =>
+  typeof window === "undefined"
+    ? false
+    : /iPhone|iPad|iPod|Android/i.test(window.navigator.userAgent)

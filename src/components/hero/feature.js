@@ -134,16 +134,17 @@ const Feature = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null)
 
   useEffect(() => {
+    let _isMobile = isMobile()
     let ctr = 0
     function updateXPosition(e) {
       if (ctr % REFRESH_RATE === 0) setXPos(e.clientX)
       ctr++
     }
 
-    if (!isMobile) window.addEventListener("mousemove", updateXPosition)
+    if (!_isMobile) window.addEventListener("mousemove", updateXPosition)
 
     return () => {
-      if (!isMobile) window.removeEventListener("mousemove", updateXPosition)
+      if (!_isMobile) window.removeEventListener("mousemove", updateXPosition)
     }
   }, [])
 
