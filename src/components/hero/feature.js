@@ -151,21 +151,15 @@ const Feature = () => {
   return (
     <div
       css={css`
-        flex: 0 0 92%;
-        margin-left: 4%;
+        grid-area: feature;
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
-        margin-top: 2rem;
-
-        @media only screen and (min-width: 375px) {
-          margin-top: 3.75rem;
-        }
+        align-content: center;
+        border: 1px solid white;
 
         @media only screen and (min-width: 768px) {
-          flex: 0 0 80%;
-          margin-left: 10%;
-          margin-top: 4rem;
+          justify-content: flex-start;
         }
       `}
     >

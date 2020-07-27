@@ -3,13 +3,16 @@ import { css } from "@emotion/core"
 import { COLOR_SCHEME } from "../layout"
 import styled from "@emotion/styled"
 import Feature from "./feature"
+import IconContainer from "./icon-container"
 
 const HeroSubText = styled("h3")`
   flex: 0 0 64%;
   font-size: 0.85rem;
-  text-align: center;
   font-weight: 200;
-  margin-top: 0.5rem;
+  margin-bottom: 0.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   @media only screen and (min-width: 375px) {
     font-size: 1.125rem;
@@ -23,31 +26,43 @@ const Hero = () => {
   return (
     <div
       css={css`
-        min-height: 100vh;
+        height: 100vh;
         width: 100vw;
-        display: flex;
-        flex-flow: row wrap;
-        align-content: flex-start;
         background: ${COLOR_SCHEME.darkBlack};
-        padding-top: 0.5rem;
-
-        @media only screen and (min-width: 375px) {
-          padding-top: 1rem;
-        }
+        display: grid;
+        border: 1px solid white;
+        grid-template-columns: 8fr;
+        grid-template-rows: 1.5fr 1fr 5fr 0.5fr;
+        grid-template-areas:
+          "summary"
+          "icons"
+          "feature"
+          "more";
 
         @media only screen and (min-width: 768px) {
-          align-content: center;
+          width: 80vw;
+          margin-left: 10vw;
+
+          grid-template-columns: 3fr 5fr;
+          grid-template-rows: 3.5fr 0.5fr 2.5fr 1.5fr;
+          grid-template-areas:
+            "summary feature"
+            ". feature"
+            "icons feature"
+            "more feature";
         }
       `}
     >
       <div
         css={css`
+          grid-area: summary;
           position: relative;
-          flex: 0 0 100%;
+          width: 100%;
           display: flex;
           flex-flow: row wrap;
           justify-content: center;
-          margin-top: 0.5rem;
+          align-content: center;
+          border: 1px solid white;
 
           @media only screen and (min-width: 1200px) {
             flex: 0 0 80%;
@@ -58,14 +73,9 @@ const Hero = () => {
       >
         <h1
           css={css`
-            flex: 0 0 90%;
-            font-size: 2.75rem;
-            line-height: 2.5rem;
+            flex: 0 0 95%;
+            font-size: 2.5rem;
             text-align: center;
-
-            @media only screen and (min-width: 375px) {
-              flex: 0 0 100%;
-            }
 
             @media only screen and (min-width: 768px) {
               font-size: 3rem;
@@ -77,13 +87,45 @@ const Hero = () => {
         <HeroSubText>Frontend Engineer</HeroSubText>
         <HeroSubText>
           Cebu, PHL{" "}
-          <span role="img" aria-label="Philippine flag">
+          <span
+            role="img"
+            aria-label="Philippine flag"
+            css={css`
+              margin-left: 0.25rem;
+            `}
+          >
             🇵🇭
           </span>
         </HeroSubText>
       </div>
 
+      <div
+        css={css`
+          grid-area: icons;
+          color: white;
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: center;
+          align-items: center;
+          border: 1px solid white;
+        `}
+      >
+        <IconContainer>xxx</IconContainer>
+        <IconContainer>xxx</IconContainer>
+        <IconContainer>xxx</IconContainer>
+      </div>
+
       <Feature></Feature>
+
+      <div
+        css={css`
+          grid-area: more;
+          color: white;
+          border: 1px solid white;
+        `}
+      >
+        more
+      </div>
     </div>
   )
 }

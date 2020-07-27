@@ -1,24 +1,15 @@
-import React, { useState, useCallback } from "react"
+import React from "react"
 import { css } from "@emotion/core"
 import About from "./about"
 import Skills from "./skills"
 import { SectionHeaders } from "../../pages"
-import { isMobile } from "../../utils/device"
 
 export const ABOUT_ITEMS = {
   about: "about",
   skills: "skills",
 }
 
-const getClassName = isSelected => {
-  if (isMobile()) return "selected"
-
-  return isSelected ? "selected" : "not-selected"
-}
-
 const AboutContainer = () => {
-  const [selected, setSelected] = useState(ABOUT_ITEMS.about)
-  const handleItemSelect = useCallback(type => setSelected(type), [setSelected])
   return (
     <div
       css={css`
@@ -29,9 +20,7 @@ const AboutContainer = () => {
         align-content: flex-start;
       `}
     >
-      <SectionHeaders id="about-me" isCentered>
-        Who?
-      </SectionHeaders>
+      <SectionHeaders id="about-me">Who?</SectionHeaders>
       <div
         css={css`
           flex: 0 0 100%;
@@ -48,16 +37,8 @@ const AboutContainer = () => {
           }
         `}
       >
-        <About
-          type={ABOUT_ITEMS.about}
-          onSelect={handleItemSelect}
-          className={getClassName(selected === ABOUT_ITEMS.about)}
-        ></About>
-        <Skills
-          type={ABOUT_ITEMS.skills}
-          onSelect={handleItemSelect}
-          className={getClassName(selected === ABOUT_ITEMS.skills)}
-        ></Skills>
+        <About></About>
+        <Skills></Skills>
       </div>
     </div>
   )

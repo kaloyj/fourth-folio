@@ -2,30 +2,7 @@ import React, { useMemo } from "react"
 import { css } from "@emotion/core"
 import styled from "@emotion/styled"
 import { COLOR_SCHEME } from "../layout"
-
-const BoxOverlayOffset = styled("div")`
-  position: absolute;
-  top: 0;
-  left: 0;
-  transform: ${props => `translate(${props.translateX}%, -10%)`};
-  border: 2px solid ${COLOR_SCHEME.accent};
-  opacity: 0.4;
-  height: 100%;
-  width: 100%;
-  transition: opacity 0.25s ease, transform 0.4s;
-`
-
-const BoxOverlay = styled("div")`
-  position: absolute;
-  top: 0;
-  left: 0;
-  border: 2px solid ${COLOR_SCHEME.accent};
-  opacity: 0.4;
-  height: 100%;
-  width: 100%;
-  transition: opacity 0.25s ease;
-  z-index: 3;
-`
+import RainbowBorderedBox from "../UI/rainbow-bordered-box"
 
 const IconContainer = styled("span")`
   border: 2px solid ${COLOR_SCHEME.accent};
@@ -80,6 +57,7 @@ const FeatureItem = ({
   hoveredIndex,
   setHoveredIndex,
 }) => {
+  // eslint-disable-next-line no-unused-vars
   const translatedXLocation = useMemo(() => {
     if (!xPos) return DEFAULT_X_OFFSET
 
@@ -95,7 +73,7 @@ const FeatureItem = ({
       target={external ? "_blank" : "_self"}
       css={css`
         flex: 0 0 40%;
-        margin: 0 5% 8% 5%;
+        margin: 4%;
         position: relative;
         height: 100px;
         display: flex;
@@ -103,7 +81,6 @@ const FeatureItem = ({
 
         @media only screen and (min-width: 375px) {
           height: 140px;
-          margin: 0 5% 12% 5%;
         }
 
         @media only screen and (min-width: 768px) {
@@ -142,46 +119,47 @@ const FeatureItem = ({
       onMouseEnter={() => setHoveredIndex(index)}
       onMouseLeave={() => setHoveredIndex(null)}
     >
-      <BoxOverlayOffset
-        className="BoxOverlayOffset"
-        translateX={translatedXLocation}
-      ></BoxOverlayOffset>
-      <BoxOverlay className="MainBoxBorder"></BoxOverlay>
-
-      <div
-        className="MainBox"
+      <RainbowBorderedBox
         css={css`
-          flex: 0 0 100%;
           height: 100%;
-          background: ${COLOR_SCHEME.darkBlack};
-          z-index: 2;
-          display: flex;
-          flex-flow: row wrap;
-          transition: background 0.25s ease;
-          position: relative;
+          width: 100%;
         `}
       >
-        <IconContainer className="FeatureItemIcon">{icon}</IconContainer>
-
-        <h3
+        <div
+          className="MainBox"
           css={css`
-            font-size: 1rem;
-            transition: color 0.25s ease;
-            text-align: right;
-            position: absolute;
-            word-break: break-word;
-            width: 84%;
-            bottom: 8%;
-            right: 8%;
-
-            @media only screen and (min-width: 1024px) {
-              font-size: 1.4rem;
-            }
+            flex: 0 0 100%;
+            height: 100%;
+            background: ${COLOR_SCHEME.darkBlack};
+            z-index: 2;
+            display: flex;
+            flex-flow: row wrap;
+            transition: background 0.25s ease;
+            position: relative;
           `}
         >
-          {label}
-        </h3>
-      </div>
+          <IconContainer className="FeatureItemIcon">{icon}</IconContainer>
+
+          <h3
+            css={css`
+              font-size: 1rem;
+              transition: color 0.25s ease;
+              text-align: right;
+              position: absolute;
+              word-break: break-word;
+              width: 84%;
+              bottom: 8%;
+              right: 8%;
+
+              @media only screen and (min-width: 1024px) {
+                font-size: 1.4rem;
+              }
+            `}
+          >
+            {label}
+          </h3>
+        </div>
+      </RainbowBorderedBox>
     </a>
   )
 }
