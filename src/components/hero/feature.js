@@ -156,10 +156,14 @@ const Feature = () => {
         flex-flow: row wrap;
         justify-content: center;
         align-content: center;
-        border: 1px solid white;
 
         @media only screen and (min-width: 768px) {
           justify-content: flex-start;
+        }
+
+        @media only screen and (min-width: 1200px) {
+          align-content: flex-start;
+          padding-top: 2rem;
         }
       `}
     >

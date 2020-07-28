@@ -25,6 +25,20 @@ const RainbowBorderedCircle = styled("div")`
     height: 50px;
     width: 50px;
   }
+
+  @media only screen and (min-width: 768px) {
+    margin: 0.5rem;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    height: 60px;
+    width: 60px;
+  }
+
+  @media only screen and (min-width: 1200px) {
+    height: 55px;
+    width: 55px;
+  }
 `
 
 const RainbowInnerCircle = styled("div")`

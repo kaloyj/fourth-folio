@@ -83,15 +83,14 @@ const FeatureItem = ({
           height: 140px;
         }
 
-        @media only screen and (min-width: 768px) {
-          flex: 0 0 24%;
-          height: 150px;
-          margin: 0 4% 8% 4%;
+        @media only screen and (min-width: 1024px) {
+          height: 200px;
         }
 
-        @media only screen and (min-width: 1024px) {
-          flex: 0 0 24%;
-          height: 200px;
+        @media only screen and (min-width: 1200px) {
+          height: 220px;
+          flex: 0 0 26%;
+          margin: 0 0 4% 4%;
         }
 
         &:hover {
