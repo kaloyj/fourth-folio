@@ -1,6 +1,7 @@
 import React from "react"
 import { css } from "@emotion/core"
 import { COLOR_SCHEME } from "../layout"
+import RainbowBorderedBox from "../UI/rainbow-bordered-box"
 
 const ExperienceItem = ({
   experience: { title, listTitle, listItems, yearStart, yearEnd },
@@ -79,67 +80,75 @@ const ExperienceItem = ({
       >
         {title}
       </span>
-      <span
+
+      <RainbowBorderedBox
+        reversedGradient
         css={css`
           flex: 0 0 50%;
-          display: flex;
-          flex-flow: row wrap;
-          border: 1px solid ${COLOR_SCHEME.accent};
-          padding: 4%;
-
-          @media only screen and (min-width: 768px) {
-            padding: 2%;
-          }
         `}
       >
-        <h4
-          css={css`
-            flex: 0 0 100%;
-            color: ${COLOR_SCHEME.accent};
-            font-family: Source Code Pro;
-          `}
-        >
-          {listTitle}
-        </h4>
         <span
           css={css`
-            margin: 0.5rem 0;
-            @media only screen and (min-width: 768px) {
-              margin: 1rem 0;
-            }
-          `}
-        >
-          {yearStart} - {yearEnd}
-        </span>
-        <ul
-          css={css`
             flex: 0 0 100%;
-            padding: 0;
-            list-style: none;
             display: flex;
             flex-flow: row wrap;
+            background-color: ${COLOR_SCHEME.darkBlack};
+            padding: 4%;
 
-            .highlight-1 {
-              color: ${COLOR_SCHEME.accent};
+            @media only screen and (min-width: 768px) {
+              padding: 2%;
             }
           `}
         >
-          {listItems.map((item, index) => (
-            <li
-              key={index}
-              css={css`
-                margin-bottom: 0.5rem;
-                flex: 0 0 100%;
-                @media only screen and (min-width: 768px) {
-                  margin-bottom: 1rem;
-                }
-              `}
-            >
-              {item}
-            </li>
-          ))}
-        </ul>
-      </span>
+          <h4
+            css={css`
+              flex: 0 0 100%;
+              color: ${COLOR_SCHEME.accent};
+              font-family: Source Code Pro;
+            `}
+          >
+            {listTitle}
+          </h4>
+          <span
+            css={css`
+              margin: 0.5rem 0;
+              @media only screen and (min-width: 768px) {
+                margin: 1rem 0;
+              }
+            `}
+          >
+            {yearStart} - {yearEnd}
+          </span>
+          <ul
+            css={css`
+              flex: 0 0 100%;
+              padding: 0;
+              list-style: none;
+              display: flex;
+              flex-flow: row wrap;
+
+              .highlight-1 {
+                color: ${COLOR_SCHEME.accent};
+              }
+            `}
+          >
+            {listItems.map((item, index) => (
+              <li
+                key={index}
+                css={css`
+                  margin-bottom: 0.5rem;
+                  flex: 0 0 100%;
+                  @media only screen and (min-width: 768px) {
+                    margin-bottom: 1rem;
+                  }
+                `}
+              >
+                {item}
+              </li>
+            ))}
+          </ul>
+        </span>
+      </RainbowBorderedBox>
     </div>
   )
 }

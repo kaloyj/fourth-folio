@@ -27,7 +27,6 @@ const HeroSubText = styled("h3")`
   }
 
   @media only screen and (min-width: 1200px) {
-    flex: 0 0 80%;
     font-size: 1rem;
   }
 `
@@ -69,7 +68,13 @@ const Hero = () => {
           width: 70vw;
           margin-left: 15vw;
           grid-template-columns: 2fr 8fr;
-          grid-template-rows: 4fr 3fr 1.5fr 1.5fr;
+          grid-template-rows: 1fr 3fr 3fr 1.5fr 1.5fr;
+          grid-template-areas:
+            ". feature"
+            "summary feature"
+            "icons feature"
+            "more feature"
+            ". feature";
           padding: 10vh 0;
         }
       `}
@@ -146,8 +151,9 @@ const Hero = () => {
           }
 
           @media only screen and (min-width: 1200px) {
+            margin-top: 1rem;
             width: 80%;
-            margin-left: 20%;
+            margin-left: 18%;
             justify-content: flex-end;
             align-content: flex-start;
           }

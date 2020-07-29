@@ -7,7 +7,7 @@ export const COLOR_SCHEME = {
   darkBlack: "#101112",
   codeGreen: "#47FF0C",
   gray: "#534B62",
-  accent: "#F2FF49",
+  accent: "#F7FF00",
   browserClose: "#FF605C",
   browserMinimize: "#6A607D",
   browserDarkerMinimize: "#4D4D4D",

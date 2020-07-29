@@ -88,8 +88,8 @@ const FeatureItem = ({
         }
 
         @media only screen and (min-width: 1200px) {
-          height: 220px;
-          flex: 0 0 26%;
+          height: 240px;
+          flex: 0 0 28%;
           margin: 0 0 4% 4%;
         }
 

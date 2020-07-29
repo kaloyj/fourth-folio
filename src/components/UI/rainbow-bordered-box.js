@@ -10,10 +10,13 @@ const RainbowBorderedBox = styled("div")`
   background: rgb(247, 255, 0);
   background: linear-gradient(
     144deg,
-    rgba(247, 255, 0, 1) 15%,
-    rgba(219, 54, 164, 1) 100%
+    ${props =>
+      props.reversedGradient
+        ? "rgba(219, 54, 164, 1) 15%, rgba(247, 255, 0, 1) 100%"
+        : "rgba(247, 255, 0, 1) 15%, rgba(219, 54, 164, 1) 100%"}
   );
   padding: 0.1rem;
+  border-radius: inherit;
 `
 
 export default RainbowBorderedBox

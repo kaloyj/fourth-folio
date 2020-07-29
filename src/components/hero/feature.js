@@ -162,7 +162,7 @@ const Feature = () => {
         }
 
         @media only screen and (min-width: 1200px) {
-          align-content: flex-start;
+          align-content: center;
           padding-top: 2rem;
         }
       `}
