@@ -50,8 +50,8 @@ const IndexPage = () => {
           `}
         >
           <About></About>
-          <Experience></Experience>
           <Work></Work>
+          <Experience></Experience>
         </div>
 
         <Footer></Footer>

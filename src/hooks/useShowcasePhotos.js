@@ -8,7 +8,7 @@ const useShowcasePhotos = () => {
           resize {
             src
           }
-          fluid(maxWidth: 500, maxHeight: 500) {
+          fluid(maxWidth: 1200, maxHeight: 628) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -18,7 +18,7 @@ const useShowcasePhotos = () => {
           resize {
             src
           }
-          fluid(maxWidth: 500, maxHeight: 500) {
+          fluid(maxWidth: 1200, maxHeight: 628) {
             ...GatsbyImageSharpFluid
           }
         }

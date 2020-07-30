@@ -1,53 +1,15 @@
-import React, { useState } from "react"
+import React, { Fragment } from "react"
 import { css } from "@emotion/core"
-import ShowcasePreview from "./showcase-preview"
-import ShowcaseDetails from "./showcase-details"
+import useShowcasePhotos from "../../hooks/useShowcasePhotos"
+import Placeholder from "./assets/photo-placeholder.svg"
+import Img from "gatsby-image/withIEPolyfill"
+import { COLOR_SCHEME } from "../layout"
+import RainbowBorderedBox from "../UI/rainbow-bordered-box"
 
-const PAST_WORKS = [
-  {
-    title: "Page Builder X",
-    tech: ["React", "Rails"],
-    description: [
-      "An application that allows people to create multiple pages through drag and drop and link them together to build a fully functional website.",
-      "We handled state management locally with React Hooks (Context + Reducer), and stored data in a normalized JSON to be passed down to Rails.",
-      "This application's name and associated company cannot be disclosed.",
-    ],
-    imageRef: "",
-  },
-  {
-    title: "Recordion",
-    tech: ["React", "TypeScript"],
-    description: [
-      "Recordion was a take-home project for my job application at Caresharing, Inc. They wanted an app that records things with a specific set of requirements.",
-      "Built the boilerplate myself, including webpack and typescript configs, as well as the basic design system.",
-      "State management was handled locally with React Context + reducer hook, and the DB representation is through localStorage",
-      "Got the job with this project!",
-    ],
-    imageRef: "recordion",
-  },
-  {
-    title: "Virtual Summit Application Z",
-    tech: ["React", "Rails"],
-    description: [
-      "An application that allows people to host virtual talks and webinars while also monetizing it through memberships, bonuses, and referral links.",
-      "We used React classes to build the components and Redux for state management.",
-      "This application's name and associated company cannot be disclosed.",
-    ],
-    imageRef: "",
-  },
-  {
-    title: "Getwork",
-    tech: ["Angular", "SpringBoot"],
-    description: [
-      "Getwork is a job order web application that catered to the requirements given by a client from a specific Cebu-based company. It was an undergraduate project developed by three people. I worked on both the SpringBoot and Angular side of the project. The app was designed by a team mate.",
-      "This web application can keep track of job orders, contracts, companies, and customers. It received a great mark from the client.",
-    ],
-    imageRef: "getwork",
-  },
-]
-
-const Showcase = () => {
-  const [selectedWork, setSelectedWork] = useState(PAST_WORKS[0])
+const Showcase = ({ work }) => {
+  const showcasePhotos = useShowcasePhotos()
+  const { title, imageRef, description, tech } = work
+  const photo = imageRef ? showcasePhotos[imageRef] : null
 
   return (
     <div
@@ -55,39 +17,124 @@ const Showcase = () => {
         flex: 0 0 100%;
         display: flex;
         flex-flow: row wrap;
+        color: white;
       `}
     >
+      <h3
+        css={css`
+          font-size: 1.25rem;
+        `}
+      >
+        {title}
+      </h3>
+
       <div
         css={css`
           flex: 0 0 100%;
-          display: flex;
-          flex-flow: row wrap;
-          justify-content: space-between;
-
-          @media only screen and (min-width: 768px) {
-            justify-content: flex-start;
-            flex: 0 0 20%;
-            flex-flow: column wrap;
-          }
-
-          @media only screen and (min-width: 1200px) {
-            flex-flow: row wrap;
-            flex: 0 0 22%;
-            align-content: flex-start;
-          }
+          margin-bottom: 0.75rem;
         `}
       >
-        {PAST_WORKS.map(work => (
-          <ShowcasePreview
-            key={work.title}
-            item={work}
-            onClick={() => setSelectedWork(work)}
-            isActive={selectedWork.title === work.title}
-          ></ShowcasePreview>
+        {tech.map((techItem, index) => (
+          <Fragment key={techItem}>
+            <span
+              css={css`
+                color: white;
+                font-size: 0.75rem;
+
+                @media only screen and (min-width: 768px) {
+                  font-size: 0.85rem;
+                }
+              `}
+            >
+              {techItem}
+            </span>
+
+            {index !== tech.length - 1 && (
+              <span
+                css={css`
+                  height: 8px;
+                  width: 8px;
+                  border-radius: 50%;
+                  background-color: ${COLOR_SCHEME.accent};
+                  display: inline-block;
+                  margin: 0 0.4rem;
+                `}
+              ></span>
+            )}
+          </Fragment>
         ))}
       </div>
 
-      <ShowcaseDetails selected={selectedWork}></ShowcaseDetails>
+      <RainbowBorderedBox
+        css={css`
+          height: 200px;
+          flex: 0 0 100%;
+          overflow: hidden;
+
+          @media only screen and (min-width: 768px) {
+            height: 300px;
+          }
+        `}
+      >
+        <div
+          css={css`
+            width: 100%;
+            height: 100%;
+            background-color: ${COLOR_SCHEME.darkBlack};
+            display: flex;
+            flex-flow: row wrap;
+            align-items: center;
+            justify-content: center;
+          `}
+        >
+          {photo ? (
+            <Img
+              fluid={photo.fluid}
+              objectFit="cover"
+              css={css`
+                height: 100%;
+                width: 100%;
+              `}
+            ></Img>
+          ) : (
+            <Placeholder
+              width="32"
+              height="32"
+              css={css`
+                z-index: 5;
+              `}
+            ></Placeholder>
+          )}
+        </div>
+      </RainbowBorderedBox>
+
+      <div
+        css={css`
+          margin: 1rem 0 1rem;
+        `}
+      >
+        {description.map((paragraph, index) => (
+          <p
+            key={index}
+            css={css`
+              color: white;
+              font-size: 0.85rem;
+              margin-bottom: 1rem;
+
+              .highlight-1 {
+                color: ${COLOR_SCHEME.accent};
+              }
+
+              @media only screen and (min-width: 768px) {
+                font-size: 1rem;
+                margin-bottom: 1.25rem;
+              }
+            `}
+          >
+            {paragraph}
+          </p>
+        ))}
+      </div>
     </div>
   )
 }

@@ -86,7 +86,6 @@ const Experience = () => {
       <SectionHeaders
         id="experience"
         css={css`
-          margin-top: 3rem;
           margin-bottom: 1rem;
         `}
       >

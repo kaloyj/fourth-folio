@@ -15,6 +15,7 @@ export const COLOR_SCHEME = {
   tilde: "#01BAEF",
   arrow: "#F3C969",
   yellow: "#F2FF49",
+  purplePink: "#DB36A4",
 }
 
 const Layout = ({ children }) => {
