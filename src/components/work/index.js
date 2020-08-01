@@ -122,8 +122,12 @@ const Work = ({ customTitle }) => {
         {customTitle || " Work & Projects"}
       </SectionHeaders>
 
-      {PAST_WORKS.map(work => (
-        <Showcase key={work.title} work={work}></Showcase>
+      {PAST_WORKS.map((work, index) => (
+        <Showcase
+          key={work.title}
+          work={work}
+          isReversed={index % 2 === 0}
+        ></Showcase>
       ))}
     </div>
   )
