@@ -2,10 +2,10 @@ import React from "react"
 import styled from "@emotion/styled"
 import { COLOR_SCHEME } from "../layout"
 
-const RainbowBorderedCircle = styled("div")`
+const RainbowBorderedCircle = styled("a")`
   margin: 0 0.5rem;
-  height: 45px;
-  width: 45px;
+  height: 40px;
+  width: 40px;
   overflow: hidden;
   border-radius: 50%;
   display: flex;
@@ -13,6 +13,7 @@ const RainbowBorderedCircle = styled("div")`
   align-items: center;
   justify-content: center;
   border: none;
+  cursor: pointer;
   background: rgb(247, 255, 0);
   background: linear-gradient(
     144deg,
@@ -20,11 +21,6 @@ const RainbowBorderedCircle = styled("div")`
     rgba(219, 54, 164, 1) 100%
   );
   padding: 0.1rem;
-
-  @media only screen and (min-width: 375px) {
-    height: 50px;
-    width: 50px;
-  }
 
   @media only screen and (min-width: 768px) {
     margin: 0.5rem;
@@ -54,9 +50,9 @@ const RainbowInnerCircle = styled("div")`
   border: none;
 `
 
-const IconContainer = ({ children }) => {
+const IconContainer = ({ children, ...props }) => {
   return (
-    <RainbowBorderedCircle>
+    <RainbowBorderedCircle {...props}>
       <RainbowInnerCircle>{children}</RainbowInnerCircle>
     </RainbowBorderedCircle>
   )

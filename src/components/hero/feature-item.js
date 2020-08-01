@@ -1,38 +1,38 @@
 import React, { useMemo } from "react"
 import { css } from "@emotion/core"
-import styled from "@emotion/styled"
+// import styled from "@emotion/styled"
 import { COLOR_SCHEME } from "../layout"
 import RainbowBorderedBox from "../UI/rainbow-bordered-box"
 
-const IconContainer = styled("span")`
-  border: 2px solid ${COLOR_SCHEME.accent};
-  position: absolute;
-  top: 8%;
-  left: 8%;
-  height: 40px;
-  width: 40px;
-  border-radius: 50%;
-  display: flex;
-  flex-flow: row wrap;
-  align-items: center;
-  justify-content: center;
-  opacity: 0.4;
-  transition: opacity 0.25s ease;
+// const IconContainer = styled("span")`
+//   border: 2px solid ${COLOR_SCHEME.accent};
+//   position: absolute;
+//   top: 8%;
+//   left: 8%;
+//   height: 40px;
+//   width: 40px;
+//   border-radius: 50%;
+//   display: flex;
+//   flex-flow: row wrap;
+//   align-items: center;
+//   justify-content: center;
+//   opacity: 0.4;
+//   transition: opacity 0.25s ease;
 
-  path {
-    transition: stroke 0.25s ease;
-  }
+//   path {
+//     transition: stroke 0.25s ease;
+//   }
 
-  @media only screen and (min-width: 375px) {
-    height: 50px;
-    width: 50px;
-  }
+//   @media only screen and (min-width: 375px) {
+//     height: 50px;
+//     width: 50px;
+//   }
 
-  @media only screen and (min-width: 1200px) {
-    top: 6%;
-    left: 4%;
-  }
-`
+//   @media only screen and (min-width: 1200px) {
+//     top: 6%;
+//     left: 4%;
+//   }
+// `
 const DEFAULT_X_OFFSET = 10
 
 // we default to 1 because 0 cannot be used in dividing
@@ -80,7 +80,8 @@ const FeatureItem = ({
         flex-flow: row wrap;
 
         @media only screen and (min-width: 375px) {
-          height: 140px;
+          margin: 2%;
+          height: 125px;
         }
 
         @media only screen and (min-width: 1024px) {
@@ -137,8 +138,6 @@ const FeatureItem = ({
             position: relative;
           `}
         >
-          <IconContainer className="FeatureItemIcon">{icon}</IconContainer>
-
           <h3
             css={css`
               font-size: 1rem;

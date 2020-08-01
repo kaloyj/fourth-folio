@@ -4,6 +4,9 @@ import { COLOR_SCHEME } from "../layout"
 import styled from "@emotion/styled"
 import Feature from "./feature"
 import IconContainer from "./icon-container"
+import Github from "../footer/assets/github.svg"
+import Twitter from "../footer/assets/twitter.svg"
+import Linkedin from "../footer/assets/linkedin.svg"
 
 const HeroSubText = styled("h3")`
   flex: 0 0 64%;
@@ -39,7 +42,7 @@ const Hero = () => {
         background: ${COLOR_SCHEME.darkBlack};
         display: grid;
         grid-template-columns: 8fr;
-        grid-template-rows: 1.5fr 1fr 5fr 0.5fr;
+        grid-template-rows: 1.5fr 0.5fr 5.5fr 0.5fr;
         grid-template-areas:
           "summary"
           "icons"
@@ -159,9 +162,23 @@ const Hero = () => {
           }
         `}
       >
-        <IconContainer>xxx</IconContainer>
-        <IconContainer>xxx</IconContainer>
-        <IconContainer>xxx</IconContainer>
+        <IconContainer href="https://github.com/kaloyj">
+          <Github height="100%" width="100%" aria-label="github link"></Github>
+        </IconContainer>
+        <IconContainer href="https://www.linkedin.com/in/carlo-janea-2880a2132/">
+          <Linkedin
+            height="100%"
+            width="100%"
+            aria-label="linkedin link"
+          ></Linkedin>
+        </IconContainer>
+        <IconContainer href="https://twitter.com/carlojanea">
+          <Twitter
+            height="100%"
+            width="100%"
+            aria-label="twitter link"
+          ></Twitter>
+        </IconContainer>
       </div>
 
       <Feature></Feature>
@@ -183,7 +200,21 @@ const Hero = () => {
           }
         `}
       >
-        more
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          height="48px"
+          width="48px"
+          viewBox="0 0 24 24"
+          stroke={COLOR_SCHEME.accent}
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="1"
+            d="M19 9l-7 7-7-7"
+          />
+        </svg>
       </div>
     </div>
   )
