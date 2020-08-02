@@ -1,6 +1,7 @@
-import React from "react"
+import React, { useLayoutEffect } from "react"
 import PropTypes from "prop-types"
 import { Global, css } from "@emotion/core"
+import { debounce } from "underscore"
 
 export const COLOR_SCHEME = {
   mediumBlack: "#333333",
@@ -19,6 +20,24 @@ export const COLOR_SCHEME = {
 }
 
 const Layout = ({ children }) => {
+  useLayoutEffect(() => {
+    // on mount
+    let vh = window.innerHeight * 0.01
+    // Then we set the value in the --vh custom property to the root of the document
+    document.documentElement.style.setProperty("--vh", `${vh}px`)
+
+    // code from https://css-tricks.com/the-trick-to-viewport-units-on-mobile/
+    const debouncedVhUpdate = debounce(() => {
+      // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+      let vh = window.innerHeight * 0.01
+      // Then we set the value in the --vh custom property to the root of the document
+      document.documentElement.style.setProperty("--vh", `${vh}px`)
+    }, 400)
+
+    window.addEventListener("resize", debouncedVhUpdate)
+
+    return () => window.removeEventListener("resize", debouncedVhUpdate)
+  }, [])
   return (
     <>
       <Global
@@ -47,6 +66,11 @@ const Layout = ({ children }) => {
             line-height: 1.1;
             color: white;
             font-family: "Poppins";
+          }
+
+          .full-height {
+            height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+            height: calc(var(--vh, 1vh) * 100);
           }
         `}
       ></Global>

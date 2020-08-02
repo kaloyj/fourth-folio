@@ -13,10 +13,10 @@ const AboutContainer = () => {
   return (
     <div
       css={css`
+        min-height: 100vh;
         flex: 0 0 100%;
         display: flex;
         flex-flow: row wrap;
-        min-height: 100vh;
         align-content: flex-start;
       `}
     >

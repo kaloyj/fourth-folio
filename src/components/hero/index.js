@@ -36,8 +36,8 @@ const HeroSubText = styled("h3")`
 const Hero = () => {
   return (
     <div
+      className="full-height"
       css={css`
-        height: 100vh;
         width: 100vw;
         background: ${COLOR_SCHEME.darkBlack};
         display: grid;
