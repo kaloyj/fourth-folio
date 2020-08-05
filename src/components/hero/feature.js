@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import { css } from "@emotion/core"
 import FeatureItem from "./feature-item"
 import { COLOR_SCHEME } from "../layout"
-import { isMobile } from "../../utils/device"
 
 const FEATURE_ITEMS = [
   {
@@ -34,27 +33,6 @@ const FEATURE_ITEMS = [
     ),
   },
   {
-    label: "Experience",
-    href: "#experience",
-    icon: (
-      <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M8 14V17M12 14V17M16 14V17M3 21H21M3 10H21M3 7L12 3L21 7M4 10H20V21H4V10Z"
-          stroke={COLOR_SCHEME.accent}
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        />
-      </svg>
-    ),
-  },
-  {
     label: "Work",
     href: "#past-works",
     icon: (
@@ -67,6 +45,27 @@ const FEATURE_ITEMS = [
       >
         <path
           d="M8 9L11 12L8 15M13 15H16M5 20H19C20.1046 20 21 19.1046 21 18V6C21 4.89543 20.1046 4 19 4H5C3.89543 4 3 4.89543 3 6V18C3 19.1046 3.89543 20 5 20Z"
+          stroke={COLOR_SCHEME.accent}
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+      </svg>
+    ),
+  },
+  {
+    label: "Experience",
+    href: "#experience",
+    icon: (
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8 14V17M12 14V17M16 14V17M3 21H21M3 10H21M3 7L12 3L21 7M4 10H20V21H4V10Z"
           stroke={COLOR_SCHEME.accent}
           strokeWidth="2"
           strokeLinecap="round"
@@ -120,34 +119,7 @@ const FEATURE_ITEMS = [
   },
 ]
 
-let REFRESH_RATE = 10
-
-// adjust index if odd for hover animation
-// to be on the extremes if last element
-function getAdjustedIndex(index, total) {
-  if (total % 3 === 0) return index
-  else return index === total - 1 ? index + 1 : index
-}
-
 const Feature = () => {
-  const [xPos, setXPos] = useState(null)
-  const [hoveredIndex, setHoveredIndex] = useState(null)
-
-  useEffect(() => {
-    let _isMobile = isMobile()
-    let ctr = 0
-    function updateXPosition(e) {
-      if (ctr % REFRESH_RATE === 0) setXPos(e.clientX)
-      ctr++
-    }
-
-    if (!_isMobile) window.addEventListener("mousemove", updateXPosition)
-
-    return () => {
-      if (!_isMobile) window.removeEventListener("mousemove", updateXPosition)
-    }
-  }, [])
-
   return (
     <div
       css={css`
@@ -167,16 +139,8 @@ const Feature = () => {
         }
       `}
     >
-      {FEATURE_ITEMS.map((feature, index) => (
-        <FeatureItem
-          key={feature.label}
-          index={getAdjustedIndex(index, FEATURE_ITEMS.length)}
-          feature={feature}
-          xPos={xPos}
-          setXPos={setXPos}
-          hoveredIndex={hoveredIndex}
-          setHoveredIndex={setHoveredIndex}
-        ></FeatureItem>
+      {FEATURE_ITEMS.map(feature => (
+        <FeatureItem key={feature.label} feature={feature}></FeatureItem>
       ))}
     </div>
   )

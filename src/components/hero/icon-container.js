@@ -47,7 +47,6 @@ const RainbowInnerCircle = styled("div")`
   flex-flow: row wrap;
   align-items: center;
   justify-content: center;
-  border: none;
 `
 
 const IconContainer = ({ children, ...props }) => {
