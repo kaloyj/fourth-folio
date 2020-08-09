@@ -140,7 +140,7 @@ const Hero = () => {
       <div
         css={css`
           grid-area: icons;
-          color: white;
+          color: ${COLOR_SCHEME.white};
           display: flex;
           flex-flow: row wrap;
           justify-content: center;
@@ -186,7 +186,7 @@ const Hero = () => {
       <div
         css={css`
           grid-area: more;
-          color: white;
+          color: ${COLOR_SCHEME.white};
           display: flex;
           flex-flow: row wrap;
           align-items: center;

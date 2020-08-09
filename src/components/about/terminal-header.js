@@ -16,7 +16,7 @@ const TerminalHeader = ({
         width: 100%;
         height: 1.5rem;
         background-color: ${backgroundColor};
-        color: white;
+        color: ${COLOR_SCHEME.white};
         text-align: center;
         font-size: 0.85rem;
         display: flex;

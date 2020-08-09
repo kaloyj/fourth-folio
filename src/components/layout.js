@@ -17,6 +17,7 @@ export const COLOR_SCHEME = {
   arrow: "#F3C969",
   yellow: "#F2FF49",
   purplePink: "#DB36A4",
+  white: "#f8f9fa",
 }
 
 const Layout = ({ children }) => {
@@ -64,7 +65,7 @@ const Layout = ({ children }) => {
           h5,
           h6 {
             line-height: 1.1;
-            color: white;
+            color: ${COLOR_SCHEME.white};
             font-family: "Poppins";
           }
 

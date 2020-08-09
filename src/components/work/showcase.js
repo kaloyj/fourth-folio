@@ -17,7 +17,7 @@ const Showcase = ({ work, isReversed }) => {
         flex: 0 0 100%;
         display: flex;
         flex-flow: row wrap;
-        color: white;
+        color: ${COLOR_SCHEME.white};
 
         @media only screen and (min-width: 1024px) {
           flex-flow: column wrap;
@@ -68,7 +68,7 @@ const Showcase = ({ work, isReversed }) => {
             <Fragment key={techItem}>
               <span
                 css={css`
-                  color: white;
+                  color: ${COLOR_SCHEME.white};
                   font-size: 0.75rem;
 
                   @media only screen and (min-width: 768px) {
@@ -227,7 +227,7 @@ const Showcase = ({ work, isReversed }) => {
           <p
             key={index}
             css={css`
-              color: white;
+              color: ${COLOR_SCHEME.white};
               font-size: 0.85rem;
               margin-bottom: 1rem;
 

@@ -55,7 +55,7 @@ const Footer = () => {
           display: flex;
           flex-flow: row wrap;
           justify-content: center;
-          color: white;
+          color: ${COLOR_SCHEME.white};
           padding: 1rem 0;
 
           @media only screen and (min-width: 375px) {
@@ -71,7 +71,7 @@ const Footer = () => {
       >
         <h4
           css={css`
-            color: white;
+            color: ${COLOR_SCHEME.white};
             flex: 0 0 100%;
             display: flex;
             justify-content: center;

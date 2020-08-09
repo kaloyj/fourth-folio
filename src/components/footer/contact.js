@@ -21,10 +21,10 @@ const FormLabel = styled("label")`
 const FormInput = styled("input")`
   flex: 0 0 100%;
   margin-top: 0.4rem;
-  border: 1px solid white;
+  border: 1px solid ${COLOR_SCHEME.white};
   background: none;
   padding: 10px 15px;
-  color: white;
+  color: ${COLOR_SCHEME.white};
   font-family: Source Code Pro;
   font-size: 0.8rem;
 
@@ -43,7 +43,7 @@ const Contact = () => {
       css={css`
         flex: 0 0 92%;
         border-radius: 10px;
-        color: white;
+        color: ${COLOR_SCHEME.white};
         margin: 1.5rem 4%;
 
         @media only screen and (min-width: 768px) {
@@ -67,7 +67,7 @@ const Contact = () => {
           background-color: ${COLOR_SCHEME.darkBlack};
           border-radius: 10px;
           padding: 4%;
-          color: white;
+          color: ${COLOR_SCHEME.white};
           overflow: hidden;
 
           @media only screen and (min-width: 768px) {
@@ -99,10 +99,10 @@ const Contact = () => {
             css={css`
               flex: 0 0 100%;
               margin-top: 0.4rem;
-              border: 1px solid white;
+              border: 1px solid ${COLOR_SCHEME.white};
               background: none;
               padding: 10px 15px;
-              color: white;
+              color: ${COLOR_SCHEME.white};
               font-family: Source Code Pro;
               font-size: 0.8rem;
               height: 150px;
@@ -123,9 +123,9 @@ const Contact = () => {
           css={css`
             font-size: 0.9rem;
             font-family: Source Code Pro;
-            border: 1px solid white;
+            border: 1px solid ${COLOR_SCHEME.white};
             padding: 5%;
-            color: white;
+            color: ${COLOR_SCHEME.white};
             background-color: ${COLOR_SCHEME.darkBlack};
 
             @media only screen and (min-width: 768px) {

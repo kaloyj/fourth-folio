@@ -84,7 +84,7 @@ const Skills = () => {
                 flex: 0 0 45%;
                 text-align: right;
                 font-size: 0.75rem;
-                color: white;
+                color: ${COLOR_SCHEME.white};
 
                 @media only screen and (min-width: 375px) {
                   flex: 0 0 40%;
@@ -118,7 +118,7 @@ const Skills = () => {
                   css={css`
                     @media only screen and (min-width: 1024px) {
                       font-size: 1.4rem;
-                      color: white;
+                      color: ${COLOR_SCHEME.white};
                     }
                   `}
                 >

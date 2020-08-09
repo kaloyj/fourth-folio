@@ -35,7 +35,7 @@ const About = () => {
         <TerminalHeader title="about-me"></TerminalHeader>
         <p
           css={css`
-            color: white;
+            color: ${COLOR_SCHEME.white};
             letter-spacing: 0.1rem;
             font-weight: 300;
             font-size: 1rem;

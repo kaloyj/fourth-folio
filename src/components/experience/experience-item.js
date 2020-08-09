@@ -11,7 +11,7 @@ const ExperienceItem = ({
       css={css`
         flex: 0 0 92%;
         margin: 1rem 4%;
-        color: white;
+        color: ${COLOR_SCHEME.white};
         font-size: 0.75rem;
         display: flex;
         flex-flow: row wrap;
@@ -32,7 +32,7 @@ const ExperienceItem = ({
           height: 30px;
           width: 30px;
           border-radius: 50%;
-          border: 3px solid white;
+          border: 3px solid ${COLOR_SCHEME.white};
           position: absolute;
           background-color: ${COLOR_SCHEME.darkBlack};
           top: 4%;
@@ -57,7 +57,7 @@ const ExperienceItem = ({
           position: absolute;
           height: 120%;
           width: 0;
-          border: 1px solid white;
+          border: 1px solid ${COLOR_SCHEME.white};
           z-index: 1;
           left: 40%;
           transform: translateX(-50%);
