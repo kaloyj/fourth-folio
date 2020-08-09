@@ -95,45 +95,107 @@ const Showcase = ({ work, isReversed }) => {
           ))}
         </div>
       </div>
-
-      <RainbowBorderedBox
-        css={css`
-          height: 200px;
-          flex: 0 0 100%;
-          overflow: hidden;
-
-          @media only screen and (min-width: 768px) {
-            height: 300px;
-          }
-
-          @media only screen and (min-width: 1024px) {
-            order: ${isReversed ? 1 : 3};
-            flex: 0 0 95%;
-            width: 50%;
-          }
-        `}
-      >
+      {photo ? (
         <div
           css={css`
-            width: 100%;
-            height: 100%;
-            background-color: ${COLOR_SCHEME.darkBlack};
+            height: 200px;
+            flex: 0 0 100%;
+            overflow: hidden;
+            overflow: hidden;
             display: flex;
             flex-flow: row wrap;
             align-items: center;
             justify-content: center;
+            border: none;
+            position: relative;
+
+            @media only screen and (min-width: 768px) {
+              height: 300px;
+            }
+
+            @media only screen and (min-width: 1024px) {
+              order: ${isReversed ? 1 : 3};
+              flex: 0 0 95%;
+              width: 50%;
+            }
           `}
         >
-          {photo ? (
+          <div
+            css={css`
+                  height: 100%;
+                  width: 100%;
+                  background-image: url("${photo.resize.src}");
+                  filter: blur(5px);
+                  -webkit-filter: blur(5px);
+                  background-position: center;
+                  background-repeat: no-repeat;
+                  background-size: cover;
+                  z-index: 1;
+
+                  @media only screen and (min-width: 768px) {
+                    filter: blur(20px);
+                    -webkit-filter: blur(20px);
+                  }
+                `}
+          ></div>
+          <div
+            css={css`
+              height: 100%;
+              width: 100%;
+              position: absolute;
+              padding: 4%;
+              top: 0;
+              left: 0;
+
+              @media only screen and (min-width: 768px) {
+                padding: 2%;
+              }
+            `}
+          >
             <Img
               fluid={photo.fluid}
-              objectFit="cover"
+              objectFit="contain"
               css={css`
                 height: 100%;
                 width: 100%;
+                top: 0;
+                left: 0;
+                z-index: 5;
+                padding: 0 2rem;
               `}
             ></Img>
-          ) : (
+          </div>
+        </div>
+      ) : (
+        <RainbowBorderedBox
+          css={css`
+            height: 200px;
+            flex: 0 0 100%;
+            overflow: hidden;
+
+            @media only screen and (min-width: 768px) {
+              height: 300px;
+            }
+
+            @media only screen and (min-width: 1024px) {
+              order: ${isReversed ? 1 : 3};
+              flex: 0 0 95%;
+              width: 50%;
+            }
+          `}
+        >
+          <div
+            css={css`
+              width: 100%;
+              height: 100%;
+              background-color: ${COLOR_SCHEME.darkBlack};
+              display: flex;
+              flex-flow: row wrap;
+              align-items: center;
+              justify-content: center;
+              position: relative;
+            `}
+          >
             <Placeholder
               width="32"
               height="32"
@@ -141,9 +203,9 @@ const Showcase = ({ work, isReversed }) => {
                 z-index: 5;
               `}
             ></Placeholder>
-          )}
-        </div>
-      </RainbowBorderedBox>
+          </div>
+        </RainbowBorderedBox>
+      )}
 
       <div
         css={css`
