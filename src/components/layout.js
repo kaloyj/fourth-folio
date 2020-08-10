@@ -6,6 +6,7 @@ import { debounce } from "underscore"
 export const COLOR_SCHEME = {
   mediumBlack: "#333333",
   darkBlack: "#101112",
+  darkestBlack: "#060406",
   codeGreen: "#47FF0C",
   gray: "#534B62",
   accent: "#F7FF00",
