@@ -8,6 +8,7 @@ import About from "../components/about"
 import Experience from "../components/experience"
 import Footer from "../components/footer"
 import Work from "../components/work"
+import { PAST_WORKS, MORE_PROJECTS } from "../utils/workData"
 
 export const SectionHeaders = styled("h2")`
   margin-top: 1.5rem;
@@ -50,8 +51,9 @@ const IndexPage = () => {
           `}
         >
           <About></About>
-          <Work></Work>
+          <Work data={PAST_WORKS}></Work>
           <Experience></Experience>
+          <Work data={MORE_PROJECTS} customTitle="More Projects"></Work>
         </div>
 
         <Footer></Footer>

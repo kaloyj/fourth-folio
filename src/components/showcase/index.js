@@ -1,8 +1,8 @@
 import React, { Fragment } from "react"
 import { css } from "@emotion/core"
+import Img from "gatsby-image/withIEPolyfill"
 import useShowcasePhotos from "../../hooks/useShowcasePhotos"
 import Placeholder from "./assets/photo-placeholder.svg"
-import Img from "gatsby-image/withIEPolyfill"
 import { COLOR_SCHEME } from "../layout"
 import RainbowBorderedBox from "../UI/rainbow-bordered-box"
 
@@ -23,6 +23,7 @@ const Showcase = ({ work, isReversed }) => {
           flex-flow: column wrap;
           justify-content: center;
           margin-bottom: 2rem;
+          min-height: 500px;
         }
       `}
     >
@@ -117,6 +118,7 @@ const Showcase = ({ work, isReversed }) => {
               order: ${isReversed ? 1 : 3};
               flex: 0 0 95%;
               width: 50%;
+              height: 500px;
             }
           `}
         >
@@ -230,6 +232,10 @@ const Showcase = ({ work, isReversed }) => {
               color: ${COLOR_SCHEME.white};
               font-size: 0.85rem;
               margin-bottom: 1rem;
+
+              a {
+                color: ${COLOR_SCHEME.purplePink};
+              }
 
               .highlight-1 {
                 color: ${COLOR_SCHEME.accent};

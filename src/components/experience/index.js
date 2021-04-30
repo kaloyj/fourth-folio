@@ -50,18 +50,16 @@ const EXPERIENCES = [
     listTitle: "Frontend Developer",
     listItems: [
       <span>
-        maintained an{" "}
-        <span className="highlight-1">employee database application</span> with
-        Vue
+        Maintained and improved a{" "}
+        <span className="highlight-1">virtual summit application</span> using
+        ReactJS with Redux for statemanagement, and Ruby on Rails for the
+        backend. Integrated with Stripe, Zapier, Mailchimp, andCloudinary for
+        third party services. Code tested with Cypress.
       </span>,
       <span>
-        maintained and developed a{" "}
-        <span className="highlight-1">virtual summit application</span> with
-        React + Rails
-      </span>,
-      <span>
-        created a <span className="highlight-1">page builder application</span>{" "}
-        with React + Hooks
+        Created a <span className="highlight-1">page builder application</span>{" "}
+        with ReactJS and managed state with Context API andReact hooks. Also
+        managed customer feedback with Intercom.
       </span>,
     ],
   },
@@ -72,11 +70,20 @@ const EXPERIENCES = [
     listTitle: "React Frontend Engineer",
     listItems: [
       <span>
-        maintained and developed a{" "}
-        <span className="highlight-1">healthcare application</span> used in
-        multiple countries
+        Maintained and built a{" "}
+        <span className="highlight-1">healthcare application</span> used by
+        majority of the hospitals in Netherlands.
       </span>,
-      <span>used Apollo GraphQL, React hooks, and Rails</span>,
+      <span>
+        Used React and Ruby on Rails for the main stack, and Apollo GraphQL for
+        server side statemanagement, along with Context API and hooks for local
+        state. Tested with BackstopJS.
+      </span>,
+      <span>
+        Refactored code from class components to function components, library
+        upgrades, and integrated features like video conferences, billing, and
+        data monitoring.
+      </span>,
     ],
   },
 ].reverse()

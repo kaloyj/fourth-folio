@@ -23,6 +23,36 @@ const useShowcasePhotos = () => {
           }
         }
       }
+      nameIt: file(relativePath: { eq: "nameIt.png" }) {
+        childImageSharp {
+          resize {
+            src
+          }
+          fluid(maxWidth: 1200, maxHeight: 628) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      bant: file(relativePath: { eq: "bant.png" }) {
+        childImageSharp {
+          resize {
+            src
+          }
+          fluid(maxWidth: 1200, maxHeight: 628) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      ilista: file(relativePath: { eq: "ilista.png" }) {
+        childImageSharp {
+          resize {
+            src
+          }
+          fluid(maxWidth: 1200, maxHeight: 628) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
 

@@ -1,9 +1,6 @@
 import React from "react"
-import { css } from "@emotion/core"
-import Showcase from "./showcase"
-import { SectionHeaders } from "../../pages"
 
-const PAST_WORKS = [
+export const PAST_WORKS = [
   {
     title: "Recordion",
     tech: ["React", "TypeScript"],
@@ -94,43 +91,59 @@ const PAST_WORKS = [
   },
 ]
 
-const Work = ({ customTitle }) => {
-  return (
-    <div
-      css={css`
-        flex: 0 0 92%;
-        margin-left: 4%;
-        display: flex;
-        flex-flow: row wrap;
-
-        @media only screen and (min-width: 768px) {
-          margin-bottom: 3rem;
-        }
-      `}
-    >
-      <SectionHeaders
-        id="past-works"
-        css={css`
-          margin-top: 1rem;
-          margin-bottom: 1rem;
-
-          @media only screen and (min-width: 768px) {
-            margin: 1rem 0 1.5rem;
-          }
-        `}
+export const MORE_PROJECTS = [
+  {
+    title: "Bant",
+    tech: ["NextJS", "Hasura", "Cypress", "ReactQuery", "TypeScript"],
+    description: [
+      <span>
+        Going into adulthood, I used to manually keep track of my expenses, and
+        realized how taxing it was to keep track of my expenses and savings, and
+        to properly estimate my next budget.
+      </span>,
+      <span>Created this app to remedy the problem.</span>,
+      <a
+        href="https://bant.netlify.app"
+        target="_blank"
+        rel="noreferrer noopener"
       >
-        {customTitle || " Work & Projects"}
-      </SectionHeaders>
-
-      {PAST_WORKS.map((work, index) => (
-        <Showcase
-          key={work.title}
-          work={work}
-          isReversed={index % 2 === 0}
-        ></Showcase>
-      ))}
-    </div>
-  )
-}
-
-export default Work
+        https://bant.netlify.app
+      </a>,
+    ],
+    imageRef: "bant",
+  },
+  {
+    title: "ilista",
+    tech: ["NextJS", "Hasura", "Cypress", "ReactQuery", "TypeScript"],
+    description: [
+      <span>
+        Sentimentality and nostalgia is a big thing for me, and having a place
+        where I could curate a list for eachfavorite thing I could think of and
+        easily look back to it made me decide to create this app.
+      </span>,
+      <a
+        href="https://ilista-app.netlify.app"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        https://ilista-app.netlify.app
+      </a>,
+    ],
+    imageRef: "ilista",
+  },
+  {
+    title: "name-it",
+    tech: ["NextJS", " Words & Thesaurus API", "jsPDF"],
+    description: [
+      <span>My handy tool to generate names for products.</span>,
+      <a
+        href="https://name-it.netlify.app"
+        target="_blank"
+        rel="noreferrer noopener"
+      >
+        https://name-it.netlify.app
+      </a>,
+    ],
+    imageRef: "nameIt",
+  },
+]
