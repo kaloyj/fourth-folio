@@ -18,7 +18,15 @@ const skills = [
     level: 7,
   },
   {
-    skill: "Empathy",
+    skill: "Testing",
+    level: 6,
+  },
+  {
+    skill: "Curiousity",
+    level: 6,
+  },
+  {
+    skill: "Learning",
     level: 6,
   },
   {
@@ -31,10 +39,6 @@ const skills = [
   },
   {
     skill: "Containers",
-    level: 3,
-  },
-  {
-    skill: "Testing",
     level: 3,
   },
 ]

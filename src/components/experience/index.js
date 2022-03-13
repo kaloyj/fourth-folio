@@ -39,7 +39,7 @@ const EXPERIENCES = [
       <span>
         maintained and worked on a{" "}
         <span className="highlight-1">learning platform</span> built on PHP +
-        React"
+        React
       </span>,
     ],
   },
@@ -52,20 +52,20 @@ const EXPERIENCES = [
       <span>
         Maintained and improved a{" "}
         <span className="highlight-1">virtual summit application</span> using
-        ReactJS with Redux for statemanagement, and Ruby on Rails for the
-        backend. Integrated with Stripe, Zapier, Mailchimp, andCloudinary for
+        ReactJS with Redux for state management, and Ruby on Rails for the
+        backend. Integrated with Stripe, Zapier, Mailchimp, and Cloudinary for
         third party services. Code tested with Cypress.
       </span>,
       <span>
         Created a <span className="highlight-1">page builder application</span>{" "}
-        with ReactJS and managed state with Context API andReact hooks. Also
+        with ReactJS and managed state with Context API and React hooks. Also
         managed customer feedback with Intercom.
       </span>,
     ],
   },
   {
     yearStart: "Jan 2020",
-    yearEnd: "Present",
+    yearEnd: "Feb 2022",
     title: "Caresharing, Inc.",
     listTitle: "React Frontend Engineer",
     listItems: [
@@ -75,16 +75,28 @@ const EXPERIENCES = [
         majority of the hospitals in Netherlands.
       </span>,
       <span>
-        Used React and Ruby on Rails for the main stack, and Apollo GraphQL for
-        server side statemanagement, along with Context API and hooks for local
-        state. Tested with BackstopJS.
+        One of the few pioneer devs to implement typescript and testing (jest,
+        testing library, and BackstopJS) on the frontend development for the
+        project that I've worked on.
+      </span>,
+      <span>
+        We used React and Ruby on Rails for the main stack, and Apollo GraphQL
+        for server side state management, along with Context API and hooks for
+        local state.
       </span>,
       <span>
         Refactored code from class components to function components, library
-        upgrades, and integrated features like video conferences, billing, and
-        data monitoring.
+        upgrades, and integrated features like video conferences, billing, data
+        monitoring, and scoped access settings.
       </span>,
     ],
+  },
+  {
+    yearStart: "March 2022",
+    yearEnd: "Present",
+    title: "Kiwi.com - Search Tribe",
+    listTitle: "Javascript Engineer",
+    listItems: [<span>Experience yet to be experienced!</span>],
   },
 ].reverse()
 const Experience = () => {

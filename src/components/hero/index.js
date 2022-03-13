@@ -124,7 +124,19 @@ const Hero = () => {
         </h1>
         <HeroSubText>Frontend Engineer</HeroSubText>
         <HeroSubText>
-          Cebu, PHL{" "}
+          BCN, Spain{" "}
+          <span
+            role="img"
+            aria-label="Philippine flag"
+            css={css`
+              margin-left: 0.25rem;
+            `}
+          >
+            🇪🇸
+          </span>
+        </HeroSubText>
+        <HeroSubText>
+          From PHL{" "}
           <span
             role="img"
             aria-label="Philippine flag"
